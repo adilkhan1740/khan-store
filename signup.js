@@ -238,16 +238,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // =====================================
             // SEND DATA TO BACKEND
-            // =====================================
-
             const response = await fetch(
-                "http://https://khan-store.onrender.com/api/signup",
-                {
-                    method: "POST",
+    "https://khan-store.onrender.com/api/signup",
+    {
+        method: "POST",
 
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
+        headers: {
+            "Content-Type": "application/json"
+        },
 
                     body: JSON.stringify({
                         name: nameValue,
