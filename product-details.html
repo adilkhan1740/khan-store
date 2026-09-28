@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product Details — KHAN Store</title>
+
+    <meta
+        name="description"
+        content="View product details and shop premium technology at KHAN Store."
+    >
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    >
+
+    <!-- Main Website CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Product Details CSS -->
+    <link rel="stylesheet" href="product-details.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     TOP BAR
+========================================================= -->
+<div class="top-bar">
+
+    <div class="container top-bar-inner">
+
+        <div class="top-message">
+            <i class="fa-solid fa-truck"></i>
+            <span>Free delivery on orders above ₹999</span>
+        </div>
+
+        <div class="top-links">
+            <a href="track-order.html">Track Order</a>
+            <a href="help.html">Help</a>
+            <a href="sell-with-us.html">Sell With Us</a>
+            <a href="about.html">About</a>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+<header class="main-header">
+
+    <div class="container header-inner">
+
+        <!-- LOGO -->
+        <a href="index.html" class="logo">
+
+            <span class="logo-icon">
+                <i class="fa-solid fa-bolt"></i>
+            </span>
+
+            <span>KHAN Store</span>
+
+        </a>
+
+
+        <!-- SEARCH -->
+        <form
+            class="search-form"
+            id="searchForm"
+            autocomplete="off"
+        >
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search products, brands and more..."
+                autocomplete="off"
+            >
+
+            <button
+                type="submit"
+                aria-label="Search"
+            >
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <div
+                class="search-suggestions"
+                id="searchSuggestions"
+            ></div>
+
+        </form>
+
+
+        <!-- HEADER ACTIONS -->
+        <div class="header-actions">
+
+            <!-- Theme -->
+            <button
+                type="button"
+                class="theme-btn"
+                id="themeBtn"
+                title="Toggle theme"
+                aria-label="Toggle theme"
+            >
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+
+            <!-- Account -->
+            <a
+                href="login.html"
+                class="header-action"
+            >
+                <i class="fa-regular fa-user"></i>
+                <span>Account</span>
+            </a>
+
+
+            <!-- Wishlist -->
+            <a
+                href="wishlist.html"
+                class="header-action wishlist-action"
+            >
+
+                <span class="icon-wrapper">
+
+                    <i class="fa-regular fa-heart"></i>
+
+                    <span
+                        class="wishlist-count"
+                        id="wishlistCount"
+                    >
+                        0
+                    </span>
+
+                </span>
+
+                <span>Wishlist</span>
+
+            </a>
+
+
+            <!-- Cart -->
+            <a
+                href="cart.html"
+                class="header-action cart-action"
+            >
+
+                <span class="icon-wrapper">
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                    <span
+                        class="cart-count"
+                        id="cartCount"
+                    >
+                        0
+                    </span>
+
+                </span>
+
+                <span>Cart</span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+<nav class="main-nav">
+
+    <div class="container nav-inner">
+
+        <a
+            href="products.html"
+            class="all-categories"
+        >
+            <i class="fa-solid fa-bars"></i>
+            <span>All Categories</span>
+        </a>
+
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="products.html">
+                Electronics
+            </a>
+
+            <a href="products.html?category=Smartphone">
+                Mobiles
+            </a>
+
+            <a href="products.html?category=Laptop">
+                Laptops
+            </a>
+
+            <a href="products.html?category=Headphones">
+                Headphones
+            </a>
+
+            <a href="products.html">
+                Brands
+            </a>
+
+            <a href="#reviews">
+                Reviews
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+
+        <div class="deliver-location">
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            <span>
+                Deliver to India
+            </span>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================================================
+     BREADCRUMB
+========================================================= -->
+<section class="breadcrumb-section">
+
+    <div class="container breadcrumb">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <i class="fa-solid fa-chevron-right"></i>
+
+        <a href="products.html">
+            Products
+        </a>
+
+        <i class="fa-solid fa-chevron-right"></i>
+
+        <span id="breadcrumbProduct">
+            Product Details
+        </span>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     LOADING STATE
+========================================================= -->
+<section
+    class="product-state"
+    id="productLoading"
+>
+
+    <div class="loader"></div>
+
+    <h3>
+        Loading product...
+    </h3>
+
+    <p>
+        Please wait while we fetch product details.
+    </p>
+
+</section>
+
+
+<!-- =========================================================
+     ERROR STATE
+========================================================= -->
+<section
+    class="product-state error-state hidden"
+    id="productError"
+>
+
+    <div class="state-icon">
+        <i class="fa-solid fa-circle-exclamation"></i>
+    </div>
+
+    <h2>
+        Product Not Found
+    </h2>
+
+    <p id="productErrorText">
+        We couldn't load this product.
+    </p>
+
+    <div class="state-actions">
+
+        <button
+            type="button"
+            id="retryProductBtn"
+            class="primary-btn"
+        >
+            <i class="fa-solid fa-rotate-right"></i>
+            Try Again
+        </button>
+
+        <a
+            href="products.html"
+            class="secondary-btn"
+        >
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Products
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PRODUCT DETAILS
+========================================================= -->
+<main
+    class="product-details-page hidden"
+    id="productDetails"
+>
+
+    <div class="container">
+
+        <!-- =====================================================
+             PRODUCT TOP AREA
+        ====================================================== -->
+        <div class="product-details-grid">
+
+
+            <!-- =================================================
+                 PRODUCT IMAGE
+            ================================================== -->
+            <div class="product-gallery">
+
+                <div class="product-image-card">
+
+                    <span
+                        class="product-discount"
+                        id="productDiscount"
+                    >
+                        -0%
+                    </span>
+
+
+                    <button
+                        type="button"
+                        class="gallery-wishlist"
+                        id="wishlistBtn"
+                        title="Add to Wishlist"
+                        aria-label="Add to wishlist"
+                    >
+
+                        <i class="fa-regular fa-heart"></i>
+
+                    </button>
+
+
+                    <img
+                        id="productImage"
+                        src=""
+                        alt="Product"
+                    >
+
+                </div>
+
+
+                <div
+                    class="image-caption"
+                    id="imageCaption"
+                >
+                    Genuine Product
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 PRODUCT INFORMATION
+            ================================================== -->
+            <div class="product-information">
+
+                <!-- CATEGORY -->
+                <div
+                    class="product-category"
+                    id="productCategory"
+                >
+                    Electronics
+                </div>
+
+
+                <!-- NAME -->
+                <h1 id="productName">
+                    Product Name
+                </h1>
+
+
+                <!-- RATING -->
+                <div class="rating-row">
+
+                    <div
+                        class="rating-stars"
+                        id="productStars"
+                    >
+                        ★★★★★
+                    </div>
+
+                    <span
+                        class="rating-number"
+                        id="productRating"
+                    >
+                        0.0
+                    </span>
+
+                    <a
+                        href="#reviews"
+                        class="review-link"
+                        id="productReviews"
+                    >
+                        0 Reviews
+                    </a>
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+                <p
+                    class="product-short-description"
+                    id="productDescription"
+                >
+                    Product description will appear here.
+                </p>
+
+
+                <!-- PRICE -->
+                <div class="price-section">
+
+                    <div
+                        class="current-price"
+                        id="productPrice"
+                    >
+                        ₹0
+                    </div>
+
+                    <div
+                        class="old-price"
+                        id="productOldPrice"
+                    >
+                        ₹0
+                    </div>
+
+                    <div
+                        class="save-price"
+                        id="productSave"
+                    >
+                        Save ₹0
+                    </div>
+
+                </div>
+
+
+                <!-- STOCK -->
+                <div class="stock-section">
+
+                    <div
+                        class="stock-status"
+                        id="stockStatus"
+                    >
+                        <i class="fa-solid fa-circle-check"></i>
+                        In Stock
+                    </div>
+
+                    <span
+                        class="stock-count"
+                        id="stockCount"
+                    >
+                        Available
+                    </span>
+
+                </div>
+
+
+                <!-- FEATURES -->
+                <div class="product-features">
+
+                    <div class="feature-item">
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+
+                        <div>
+                            <strong>
+                                Free Delivery
+                            </strong>
+
+                            <span>
+                                On orders above ₹999
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature-item">
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+
+                        <div>
+                            <strong>
+                                Secure Payments
+                            </strong>
+
+                            <span>
+                                100% secure checkout
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature-item">
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-rotate-left"></i>
+                        </div>
+
+                        <div>
+                            <strong>
+                                Easy Returns
+                            </strong>
+
+                            <span>
+                                Hassle-free returns
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PURCHASE -->
+                <div class="purchase-section">
+
+                    <!-- QUANTITY -->
+                    <div class="quantity-box">
+
+                        <span class="quantity-label">
+                            Quantity
+                        </span>
+
+                        <div class="quantity-control">
+
+                            <button
+                                type="button"
+                                id="decreaseQty"
+                                aria-label="Decrease quantity"
+                            >
+                                <i class="fa-solid fa-minus"></i>
+                            </button>
+
+                            <input
+                                type="number"
+                                id="productQuantity"
+                                value="1"
+                                min="1"
+                                max="1"
+                                aria-label="Product quantity"
+                            >
+
+                            <button
+                                type="button"
+                                id="increaseQty"
+                                aria-label="Increase quantity"
+                            >
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- BUTTONS -->
+                    <div class="product-actions">
+
+                        <button
+                            type="button"
+                            class="add-cart-btn"
+                            id="addToCartBtn"
+                        >
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span>Add to Cart</span>
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="buy-now-btn"
+                            id="buyNowBtn"
+                        >
+                            <i class="fa-solid fa-bolt"></i>
+                            <span>Buy Now</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- META -->
+                <div class="product-meta">
+
+                    <div class="product-meta-item">
+
+                        <span>
+                            Product ID:
+                        </span>
+
+                        <strong id="productId">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="product-meta-item">
+
+                        <span>
+                            Category:
+                        </span>
+
+                        <strong id="productMetaCategory">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             DESCRIPTION / SHIPPING
+        ====================================================== -->
+        <section class="details-section">
+
+            <div class="section-tabs">
+
+                <button
+                    type="button"
+                    class="details-tab active"
+                    data-tab="description"
+                >
+                    Description
+                </button>
+
+                <button
+                    type="button"
+                    class="details-tab"
+                    data-tab="shipping"
+                >
+                    Shipping & Returns
+                </button>
+
+            </div>
+
+
+            <!-- DESCRIPTION TAB -->
+            <div
+                class="tab-content active"
+                id="descriptionTab"
+            >
+
+                <h2>
+                    Product Description
+                </h2>
+
+                <p id="fullDescription">
+                    Product description will appear here.
+                </p>
+
+            </div>
+
+
+            <!-- SHIPPING TAB -->
+            <div
+                class="tab-content"
+                id="shippingTab"
+                hidden
+            >
+
+                <h2>
+                    Shipping & Returns
+                </h2>
+
+                <div class="shipping-info">
+
+                    <div>
+
+                        <div class="shipping-icon">
+                            <i class="fa-solid fa-truck"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Fast Delivery
+                            </strong>
+
+                            <p>
+                                Free delivery is available on eligible orders above ₹999.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <div class="shipping-icon">
+                            <i class="fa-solid fa-box-open"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Easy Returns
+                            </strong>
+
+                            <p>
+                                Return policies depend on the product and order conditions.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <div class="shipping-icon">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Secure Checkout
+                            </strong>
+
+                            <p>
+                                Your checkout information is handled securely.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             REVIEWS
+        ====================================================== -->
+        <section
+            class="reviews-section"
+            id="reviews"
+        >
+
+            <!-- SECTION HEADING -->
+            <div class="section-heading reviews-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        CUSTOMER FEEDBACK
+                    </span>
+
+                    <h2>
+                        Ratings & Reviews
+                    </h2>
+
+                    <p>
+                        See what customers are saying about this product.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- REVIEW SUMMARY -->
+            <div class="reviews-summary">
+
+                <!-- OVERALL -->
+                <div class="overall-rating">
+
+                    <div
+                        class="overall-rating-number"
+                        id="reviewsAverage"
+                    >
+                        0.0
+                    </div>
+
+                    <div
+                        class="overall-stars"
+                        id="reviewsAverageStars"
+                    >
+                        ☆☆☆☆☆
+                    </div>
+
+                    <div
+                        class="overall-count"
+                        id="reviewsTotal"
+                    >
+                        0 Reviews
+                    </div>
+
+                </div>
+
+
+                <!-- BREAKDOWN -->
+                <div class="rating-breakdown">
+
+                    <!-- 5 STAR -->
+                    <div class="rating-bar-row">
+
+                        <span class="rating-bar-label">
+                            5
+                        </span>
+
+                        <i class="fa-solid fa-star"></i>
+
+                        <div class="rating-bar">
+
+                            <div
+                                class="rating-bar-fill"
+                                id="ratingBar5"
+                                style="width:0%"
+                            ></div>
+
+                        </div>
+
+                        <span
+                            class="rating-bar-count"
+                            id="ratingCount5"
+                        >
+                            0
+                        </span>
+
+                    </div>
+
+
+                    <!-- 4 STAR -->
+                    <div class="rating-bar-row">
+
+                        <span class="rating-bar-label">
+                            4
+                        </span>
+
+                        <i class="fa-solid fa-star"></i>
+
+                        <div class="rating-bar">
+
+                            <div
+                                class="rating-bar-fill"
+                                id="ratingBar4"
+                                style="width:0%"
+                            ></div>
+
+                        </div>
+
+                        <span
+                            class="rating-bar-count"
+                            id="ratingCount4"
+                        >
+                            0
+                        </span>
+
+                    </div>
+
+
+                    <!-- 3 STAR -->
+                    <div class="rating-bar-row">
+
+                        <span class="rating-bar-label">
+                            3
+                        </span>
+
+                        <i class="fa-solid fa-star"></i>
+
+                        <div class="rating-bar">
+
+                            <div
+                                class="rating-bar-fill"
+                                id="ratingBar3"
+                                style="width:0%"
+                            ></div>
+
+                        </div>
+
+                        <span
+                            class="rating-bar-count"
+                            id="ratingCount3"
+                        >
+                            0
+                        </span>
+
+                    </div>
+
+
+                    <!-- 2 STAR -->
+                    <div class="rating-bar-row">
+
+                        <span class="rating-bar-label">
+                            2
+                        </span>
+
+                        <i class="fa-solid fa-star"></i>
+
+                        <div class="rating-bar">
+
+                            <div
+                                class="rating-bar-fill"
+                                id="ratingBar2"
+                                style="width:0%"
+                            ></div>
+
+                        </div>
+
+                        <span
+                            class="rating-bar-count"
+                            id="ratingCount2"
+                        >
+                            0
+                        </span>
+
+                    </div>
+
+
+                    <!-- 1 STAR -->
+                    <div class="rating-bar-row">
+
+                        <span class="rating-bar-label">
+                            1
+                        </span>
+
+                        <i class="fa-solid fa-star"></i>
+
+                        <div class="rating-bar">
+
+                            <div
+                                class="rating-bar-fill"
+                                id="ratingBar1"
+                                style="width:0%"
+                            ></div>
+
+                        </div>
+
+                        <span
+                            class="rating-bar-count"
+                            id="ratingCount1"
+                        >
+                            0
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- WRITE REVIEW -->
+                <div class="write-review-box">
+
+                    <div class="write-review-icon">
+                        <i class="fa-solid fa-pen"></i>
+                    </div>
+
+                    <div class="write-review-content">
+
+                        <h3>
+                            Share Your Experience
+                        </h3>
+
+                        <p>
+                            Have you purchased this product?
+                            Tell other customers about it.
+                        </p>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="write-review-btn"
+                        id="writeReviewBtn"
+                    >
+                        <i class="fa-solid fa-star"></i>
+                        Write a Review
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 REVIEW FORM
+            ================================================== -->
+            <div
+                class="review-form-wrapper"
+                id="reviewFormWrapper"
+                hidden
+            >
+
+                <div class="review-form-card">
+
+                    <div class="review-form-header">
+
+                        <div>
+
+                            <span class="section-label">
+                                YOUR FEEDBACK
+                            </span>
+
+                            <h3>
+                                Write a Review
+                            </h3>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="review-form-close"
+                            id="closeReviewForm"
+                            aria-label="Close review form"
+                        >
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+
+                    </div>
+
+
+                    <form id="reviewForm">
+
+                        <!-- NAME -->
+                        <div class="review-form-group">
+
+                            <label for="reviewName">
+                                Your Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="reviewName"
+                                name="reviewName"
+                                placeholder="Enter your name"
+                                maxlength="60"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- RATING -->
+                        <div class="review-form-group">
+
+                            <label>
+                                Your Rating
+                            </label>
+
+                            <div
+                                class="review-star-input"
+                                id="reviewStarInput"
+                            >
+
+                                <button
+                                    type="button"
+                                    class="review-star-btn"
+                                    data-rating="1"
+                                >
+                                    <i class="fa-regular fa-star"></i>
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="review-star-btn"
+                                    data-rating="2"
+                                >
+                                    <i class="fa-regular fa-star"></i>
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="review-star-btn"
+                                    data-rating="3"
+                                >
+                                    <i class="fa-regular fa-star"></i>
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="review-star-btn"
+                                    data-rating="4"
+                                >
+                                    <i class="fa-regular fa-star"></i>
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="review-star-btn"
+                                    data-rating="5"
+                                >
+                                    <i class="fa-regular fa-star"></i>
+                                </button>
+
+                            </div>
+
+                            <span id="ratingSelectedText">
+                                Select your rating
+                            </span>
+
+                        </div>
+
+
+                        <!-- REVIEW -->
+                        <div class="review-form-group">
+
+                            <label for="reviewText">
+                                Your Review
+                            </label>
+
+                            <textarea
+                                id="reviewText"
+                                name="reviewText"
+                                rows="5"
+                                maxlength="1000"
+                                placeholder="Tell other customers about your experience..."
+                                required
+                            ></textarea>
+
+                            <div class="review-character-count">
+
+                                <span id="reviewCharCount">
+                                    0
+                                </span>
+
+                                / 1000
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ACTIONS -->
+                        <div class="review-form-actions">
+
+                            <button
+                                type="button"
+                                class="review-cancel-btn"
+                                id="cancelReviewBtn"
+                            >
+                                Cancel
+                            </button>
+
+                            <button
+                                type="submit"
+                                class="review-submit-btn"
+                            >
+                                <i class="fa-solid fa-paper-plane"></i>
+                                Submit Review
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 REVIEWS LIST
+            ================================================== -->
+            <div class="reviews-list-section">
+
+                <div class="reviews-list-header">
+
+                    <div>
+
+                        <h3>
+                            Customer Reviews
+                        </h3>
+
+                        <span id="reviewsListCount">
+                            0 reviews
+                        </span>
+
+                    </div>
+
+
+                    <select
+                        id="reviewSort"
+                        class="review-sort"
+                    >
+
+                        <option value="newest">
+                            Newest First
+                        </option>
+
+                        <option value="highest">
+                            Highest Rating
+                        </option>
+
+                        <option value="lowest">
+                            Lowest Rating
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- EMPTY -->
+                <div
+                    class="reviews-empty"
+                    id="reviewsEmpty"
+                >
+
+                    <div class="reviews-empty-icon">
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+
+                    <h3>
+                        No Reviews Yet
+                    </h3>
+
+                    <p>
+                        Be the first customer to review this product.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="write-review-btn"
+                        id="emptyWriteReviewBtn"
+                    >
+                        <i class="fa-solid fa-pen"></i>
+                        Write First Review
+                    </button>
+
+                </div>
+
+
+                <!-- LIST -->
+                <div
+                    class="reviews-list"
+                    id="reviewsList"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             RELATED PRODUCTS
+        ====================================================== -->
+        <section class="related-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        YOU MAY ALSO LIKE
+                    </span>
+
+                    <h2>
+                        Related Products
+                    </h2>
+
+                </div>
+
+                <a href="products.html">
+
+                    View All
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+
+            <div
+                class="related-products-grid"
+                id="relatedProducts"
+            ></div>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+<div
+    class="toast"
+    id="toast"
+    role="status"
+    aria-live="polite"
+>
+
+    <div class="toast-icon">
+        <i class="fa-solid fa-check"></i>
+    </div>
+
+    <div class="toast-content">
+
+        <strong id="toastTitle">
+            Success
+        </strong>
+
+        <span id="toastMessage">
+            Product added successfully.
+        </span>
+
+    </div>
+
+    <button
+        type="button"
+        id="closeToast"
+        aria-label="Close notification"
+    >
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+</div>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+<footer class="site-footer">
+
+    <div class="container footer-grid">
+
+        <!-- BRAND -->
+        <div class="footer-column footer-brand">
+
+            <a
+                href="index.html"
+                class="logo footer-logo"
+            >
+
+                <span class="logo-icon">
+                    <i class="fa-solid fa-bolt"></i>
+                </span>
+
+                <span>
+                    KHAN Store
+                </span>
+
+            </a>
+
+            <p>
+                Premium electronics, smart gadgets and everyday
+                technology at great prices.
+            </p>
+
+            <div class="social-links">
+
+                <a
+                    href="#"
+                    aria-label="Facebook"
+                >
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a
+                    href="#"
+                    aria-label="Instagram"
+                >
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a
+                    href="#"
+                    aria-label="Twitter"
+                >
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SHOP -->
+        <div class="footer-column">
+
+            <h3>
+                Shop
+            </h3>
+
+            <a href="products.html">
+                All Products
+            </a>
+
+            <a href="products.html?category=Smartphone">
+                Smartphones
+            </a>
+
+            <a href="products.html?category=Laptop">
+                Laptops
+            </a>
+
+            <a href="products.html?category=Headphones">
+                Headphones
+            </a>
+
+            <a href="products.html?category=Smartwatch">
+                Smartwatches
+            </a>
+
+        </div>
+
+
+        <!-- CUSTOMER SERVICE -->
+        <div class="footer-column">
+
+            <h3>
+                Customer Service
+            </h3>
+
+            <a href="track-order.html">
+                Track Order
+            </a>
+
+            <a href="help.html">
+                Help Center
+            </a>
+
+            <a href="contact.html">
+                Contact Us
+            </a>
+
+            <a href="about.html">
+                About Us
+            </a>
+
+        </div>
+
+
+        <!-- ACCOUNT -->
+        <div class="footer-column">
+
+            <h3>
+                Account
+            </h3>
+
+            <a href="login.html">
+                Login
+            </a>
+
+            <a href="signup.html">
+                Create Account
+            </a>
+
+            <a href="wishlist.html">
+                Wishlist
+            </a>
+
+            <a href="cart.html">
+                Shopping Cart
+            </a>
+
+            <a href="my-orders.html">
+                My Orders
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER BOTTOM -->
+    <div class="footer-bottom">
+
+        <div class="container footer-bottom-inner">
+
+            <p>
+                © 2026 KHAN Store. All rights reserved.
+            </p>
+
+            <div class="footer-bottom-links">
+
+                <a href="#">
+                    Privacy Policy
+                </a>
+
+                <a href="#">
+                    Terms & Conditions
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     PRODUCT DETAILS JAVASCRIPT
+========================================================= -->
+<script src="product-details.js"></script>
+</body>
+</html>

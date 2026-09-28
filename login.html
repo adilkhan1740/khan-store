@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | KHAN Store</title>
+
+    <link rel="stylesheet" href="login.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="login-header">
+        <a href="index.html" class="logo">
+            <span>KHAN</span> Store
+        </a>
+
+        <a href="index.html" class="back-home">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Store
+        </a>
+    </header>
+
+
+    <!-- ================= LOGIN SECTION ================= -->
+    <main class="login-page">
+
+        <div class="login-container">
+
+            <!-- LEFT SIDE -->
+            <section class="login-info">
+
+                <div class="info-content">
+
+                    <div class="info-logo">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </div>
+
+                    <h1>Welcome Back!</h1>
+
+                    <p>
+                        Login to your KHAN Store account and continue
+                        shopping your favourite products.
+                    </p>
+
+                    <div class="benefits">
+
+                        <div class="benefit">
+                            <div class="benefit-icon">
+                                <i class="fa-solid fa-truck-fast"></i>
+                            </div>
+
+                            <div>
+                                <h3>Fast Delivery</h3>
+                                <p>Get your products delivered quickly.</p>
+                            </div>
+                        </div>
+
+
+                        <div class="benefit">
+                            <div class="benefit-icon">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+
+                            <div>
+                                <h3>Secure Shopping</h3>
+                                <p>Your shopping experience stays protected.</p>
+                            </div>
+                        </div>
+
+
+                        <div class="benefit">
+                            <div class="benefit-icon">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+
+                            <div>
+                                <h3>Wishlist</h3>
+                                <p>Save products you love for later.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- RIGHT SIDE -->
+            <section class="login-box">
+
+                <div class="login-title">
+
+                    <div class="mobile-login-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <h2>Login to your account</h2>
+
+                    <p>
+                        Enter your details to continue
+                    </p>
+
+                </div>
+
+
+                <!-- LOGIN FORM -->
+                <form id="loginForm">
+
+                    <!-- EMAIL -->
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-regular fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter your email"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+                    <div class="form-group">
+
+                        <div class="password-label">
+
+                            <label for="password">
+                                Password
+                            </label>
+
+                            <a href="forgot-password.html">
+                                Forgot Password?
+                            </a>
+
+                        </div>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="togglePassword"
+                                aria-label="Show password"
+                            >
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- REMEMBER -->
+                    <div class="remember-row">
+
+                        <label class="remember">
+
+                            <input
+                                type="checkbox"
+                                id="rememberMe"
+                            >
+
+                            <span>Remember me</span>
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- LOGIN BUTTON -->
+                    <button
+                        type="submit"
+                        class="login-btn"
+                        id="loginBtn"
+                    >
+
+                        <span id="loginBtnText">
+                            Login
+                        </span>
+
+                        <i
+                            class="fa-solid fa-arrow-right"
+                            id="loginBtnIcon"
+                        ></i>
+
+                    </button>
+
+
+                    <!-- DEMO NOTE -->
+                    <div class="demo-note">
+
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        <span>
+                            Frontend demo login. Don't use a real password here.
+                        </span>
+
+                    </div>
+
+                </form>
+
+
+                <!-- SIGNUP -->
+                <div class="signup-area">
+
+                    <span>Don't have an account?</span>
+
+                    <a href="signup.html">
+                        Create Account
+                    </a>
+
+                </div>
+
+
+                <!-- SOCIAL -->
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+                <div class="social-login">
+
+                    <button type="button" class="social-btn">
+                        <i class="fa-brands fa-google"></i>
+                        Continue with Google
+                    </button>
+
+                </div>
+
+
+                <!-- TERMS -->
+                <p class="terms">
+
+                    By continuing, you agree to our
+                    <a href="#">Terms & Conditions</a>
+                    and
+                    <a href="#">Privacy Policy</a>.
+
+                </p>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- TOAST -->
+    <div id="toast" class="toast">
+        <i id="toastIcon" class="fa-solid fa-circle-check"></i>
+        <span id="toastMessage">Login successful</span>
+    </div>
+
+
+    <script src="login.js"></script>
+
+</body>
+</html>

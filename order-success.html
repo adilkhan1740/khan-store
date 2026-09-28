@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order Confirmed — KHAN Store</title>
+
+    <meta
+        name="description"
+        content="Your KHAN Store order has been successfully placed."
+    >
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="order-success.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="success-header">
+
+        <div class="success-header-inner">
+
+            <a href="index.html" class="success-logo">
+                <span class="logo-icon">
+                    <i class="fa-solid fa-bolt"></i>
+                </span>
+
+                <span class="logo-text">
+                    KHAN <strong>Store</strong>
+                </span>
+            </a>
+
+            <div class="secure-checkout">
+                <i class="fa-solid fa-shield-halved"></i>
+                Secure Shopping
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="success-page">
+
+        <div class="success-container">
+
+            <!-- Success Icon -->
+
+            <div class="success-animation">
+
+                <div class="success-circle">
+
+                    <i class="fa-solid fa-check"></i>
+
+                </div>
+
+            </div>
+
+
+            <!-- Heading -->
+
+            <div class="success-heading">
+
+                <span class="success-label">
+                    ORDER CONFIRMED
+                </span>
+
+                <h1>
+                    Thank You For Your Order!
+                </h1>
+
+                <p>
+                    Your order has been placed successfully.
+                    We have received your order and will start processing it shortly.
+                </p>
+
+            </div>
+
+
+            <!-- Order ID -->
+
+            <div class="order-id-card">
+
+                <div class="order-id-icon">
+                    <i class="fa-solid fa-receipt"></i>
+                </div>
+
+                <div class="order-id-content">
+
+                    <span>
+                        Order ID
+                    </span>
+
+                    <strong id="successOrderId">
+                        KHS--------
+                    </strong>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="copyOrderIdBtn"
+                    class="copy-order-btn"
+                >
+                    <i class="fa-regular fa-copy"></i>
+                    Copy
+                </button>
+
+            </div>
+
+
+            <!-- Order Details -->
+
+            <section class="success-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <span class="section-label">
+                            ORDER DETAILS
+                        </span>
+
+                        <h2>
+                            Your Order Summary
+                        </h2>
+                    </div>
+
+                    <span class="status-badge">
+                        <i class="fa-solid fa-circle"></i>
+                        Processing
+                    </span>
+
+                </div>
+
+
+                <div class="order-info-grid">
+
+                    <div class="order-info-item">
+
+                        <div class="info-icon">
+                            <i class="fa-regular fa-calendar"></i>
+                        </div>
+
+                        <div>
+                            <span>Order Date</span>
+                            <strong id="orderDate">
+                                --
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="order-info-item">
+
+                        <div class="info-icon">
+                            <i class="fa-solid fa-credit-card"></i>
+                        </div>
+
+                        <div>
+                            <span>Payment Method</span>
+                            <strong id="paymentMethod">
+                                --
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="order-info-item">
+
+                        <div class="info-icon">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+
+                        <div>
+                            <span>Delivery</span>
+                            <strong id="deliveryMethod">
+                                --
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="order-info-item">
+
+                        <div class="info-icon">
+                            <i class="fa-solid fa-box"></i>
+                        </div>
+
+                        <div>
+                            <span>Total Items</span>
+                            <strong id="totalItems">
+                                --
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Products -->
+
+            <section class="success-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <span class="section-label">
+                            PRODUCTS
+                        </span>
+
+                        <h2>
+                            Items In Your Order
+                        </h2>
+                    </div>
+
+                    <span
+                        class="product-count"
+                        id="productCount"
+                    >
+                        0 items
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="success-products"
+                    id="successProducts"
+                >
+                    <!-- Products loaded by JavaScript -->
+                </div>
+
+            </section>
+
+
+            <!-- Price Summary -->
+
+            <section class="success-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <span class="section-label">
+                            PAYMENT SUMMARY
+                        </span>
+
+                        <h2>
+                            Order Total
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <div class="price-summary">
+
+                    <div class="price-row">
+
+                        <span>
+                            Subtotal
+                        </span>
+
+                        <strong id="successSubtotal">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="price-row">
+
+                        <span>
+                            Delivery
+                        </span>
+
+                        <strong id="successDelivery">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <div
+                        class="price-row discount-row"
+                        id="successDiscountRow"
+                    >
+
+                        <span>
+                            Discount
+                        </span>
+
+                        <strong id="successDiscount">
+                            -₹0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-divider"></div>
+
+
+                    <div class="price-row total-row">
+
+                        <span>
+                            Total Paid
+                        </span>
+
+                        <strong id="successTotal">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Delivery Address -->
+
+            <section class="success-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <span class="section-label">
+                            DELIVERY ADDRESS
+                        </span>
+
+                        <h2>
+                            Shipping Information
+                        </h2>
+                    </div>
+
+                    <i class="fa-solid fa-location-dot location-title-icon"></i>
+
+                </div>
+
+
+                <div class="shipping-address">
+
+                    <div class="address-icon">
+                        <i class="fa-solid fa-house"></i>
+                    </div>
+
+                    <div class="address-content">
+
+                        <strong id="customerName">
+                            --
+                        </strong>
+
+                        <p id="customerAddress">
+                            --
+                        </p>
+
+                        <p id="customerCityState">
+                            --
+                        </p>
+
+                        <p id="customerPhone">
+                            --
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- What Happens Next -->
+
+            <section class="next-steps">
+
+                <div class="next-steps-header">
+
+                    <span class="section-label">
+                        WHAT HAPPENS NEXT
+                    </span>
+
+                    <h2>
+                        We'll Keep You Updated
+                    </h2>
+
+                </div>
+
+
+                <div class="timeline">
+
+                    <div class="timeline-item active">
+
+                        <div class="timeline-icon">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <strong>
+                                Order Confirmed
+                            </strong>
+
+                            <span>
+                                Your order has been received.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-line"></div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-icon">
+                            <i class="fa-solid fa-box"></i>
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <strong>
+                                Order Processing
+                            </strong>
+
+                            <span>
+                                We're preparing your items.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-line"></div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-icon">
+                            <i class="fa-solid fa-truck"></i>
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <strong>
+                                Shipped
+                            </strong>
+
+                            <span>
+                                Your package will be on its way.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-line"></div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-icon">
+                            <i class="fa-solid fa-house"></i>
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <strong>
+                                Delivered
+                            </strong>
+
+                            <span>
+                                Your order reaches your doorstep.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Buttons -->
+
+            <div class="success-actions">
+
+                <a
+                    href="my-orders.html"
+                    class="primary-btn"
+                >
+                    <i class="fa-solid fa-box-open"></i>
+                    View My Orders
+                </a>
+
+
+                <a
+                    href="track-order.html"
+                    class="secondary-btn"
+                >
+                    <i class="fa-solid fa-location-crosshairs"></i>
+                    Track Order
+                </a>
+
+
+                <a
+                    href="products.html"
+                    class="continue-btn"
+                >
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    Continue Shopping
+                </a>
+
+            </div>
+
+
+            <!-- Help -->
+
+            <div class="success-help">
+
+                <div class="help-icon">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+
+                <div class="help-content">
+
+                    <strong>
+                        Need help with your order?
+                    </strong>
+
+                    <span>
+                        Our support team is here to help.
+                    </span>
+
+                </div>
+
+                <a href="help.html">
+                    Help Center
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="success-footer">
+
+        <div class="success-footer-inner">
+
+            <p>
+                © 2026 KHAN Store. All rights reserved.
+            </p>
+
+            <div class="footer-links">
+
+                <a href="privacy.html">
+                    Privacy Policy
+                </a>
+
+                <a href="terms.html">
+                    Terms & Conditions
+                </a>
+
+                <a href="contact.html">
+                    Contact Us
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Toast -->
+
+    <div
+        class="success-toast"
+        id="successToast"
+    >
+        <i class="fa-solid fa-check-circle"></i>
+
+        <span id="toastMessage">
+            Order ID copied!
+        </span>
+    </div>
+
+
+    <!-- JavaScript -->
+
+    <script src="order-success.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Products — KHAN Store</title>
+
+    <meta
+        name="description"
+        content="Shop premium smartphones, laptops, headphones, smart watches and everyday technology at KHAN Store."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="products.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="products-header">
+
+        <div class="products-header-inner">
+
+            <a href="index.html" class="products-logo">
+                <span class="logo-icon">
+                    <i class="fa-solid fa-bolt"></i>
+                </span>
+
+                <span>
+                    <strong>KHAN</strong>
+                    <small>Store</small>
+                </span>
+            </a>
+
+
+            <nav class="products-desktop-nav">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="products.html" class="active">
+                    Products
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="help.html">
+                    Help
+                </a>
+
+                <a href="wishlist.html">
+                    Wishlist
+                    <span
+                        class="products-nav-badge"
+                        id="wishlistCount"
+                    >0</span>
+                </a>
+
+                <a href="cart.html" class="cart-nav-link">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Cart
+                    <span
+                        class="products-nav-badge"
+                        id="cartCount"
+                    >0</span>
+                </a>
+
+            </nav>
+
+
+            <button
+                type="button"
+                class="products-mobile-menu-btn"
+                id="mobileMenuBtn"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+
+        <!-- MOBILE NAV -->
+
+        <div
+            class="products-mobile-nav"
+            id="mobileNav"
+        >
+
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                Home
+            </a>
+
+            <a href="products.html" class="active">
+                <i class="fa-solid fa-box-open"></i>
+                Products
+            </a>
+
+            <a href="about.html">
+                <i class="fa-solid fa-circle-info"></i>
+                About
+            </a>
+
+            <a href="contact.html">
+                <i class="fa-solid fa-envelope"></i>
+                Contact
+            </a>
+
+            <a href="help.html">
+                <i class="fa-solid fa-circle-question"></i>
+                Help
+            </a>
+
+            <a href="wishlist.html">
+                <i class="fa-solid fa-heart"></i>
+                Wishlist
+
+                <span
+                    class="products-nav-badge"
+                    id="mobileWishlistCount"
+                >0</span>
+            </a>
+
+            <a href="cart.html">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Cart
+
+                <span
+                    class="products-nav-badge"
+                    id="mobileCartCount"
+                >0</span>
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= BREADCRUMB ================= -->
+
+    <div class="products-breadcrumb">
+
+        <div class="products-container">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+            <span>
+                Products
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="products-hero">
+
+        <div class="products-container">
+
+            <div class="products-hero-content">
+
+                <span class="products-hero-badge">
+                    <i class="fa-solid fa-bolt"></i>
+                    PREMIUM TECHNOLOGY
+                </span>
+
+                <h1>
+                    Explore Our
+                    <span>Products</span>
+                </h1>
+
+                <p>
+                    Discover premium electronics, smart gadgets
+                    and everyday technology built for modern life.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="products-main">
+
+        <div class="products-container">
+
+            <!-- TOP TOOLBAR -->
+
+            <div class="products-toolbar">
+
+                <div class="products-result-info">
+
+                    <strong id="productCountText">
+                        All Products
+                    </strong>
+
+                    <span id="resultCount">
+                        0 products
+                    </span>
+
+                </div>
+
+
+                <div class="products-toolbar-actions">
+
+                    <button
+                        type="button"
+                        class="filter-mobile-btn"
+                        id="filterMobileBtn"
+                    >
+                        <i class="fa-solid fa-sliders"></i>
+                        Filters
+                    </button>
+
+
+                    <label class="sort-wrapper">
+
+                        <span>
+                            Sort by
+                        </span>
+
+                        <select id="sortProducts">
+
+                            <option value="featured">
+                                Featured
+                            </option>
+
+                            <option value="price-low">
+                                Price: Low to High
+                            </option>
+
+                            <option value="price-high">
+                                Price: High to Low
+                            </option>
+
+                            <option value="rating">
+                                Customer Rating
+                            </option>
+
+                            <option value="discount">
+                                Biggest Discount
+                            </option>
+
+                            <option value="name">
+                                Name: A to Z
+                            </option>
+
+                        </select>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCTS LAYOUT -->
+
+            <div class="products-layout">
+
+
+                <!-- ================= SIDEBAR ================= -->
+
+                <aside
+                    class="products-sidebar"
+                    id="productsSidebar"
+                >
+
+                    <div class="sidebar-mobile-header">
+
+                        <strong>
+                            Filters
+                        </strong>
+
+                        <button
+                            type="button"
+                            id="closeFilterBtn"
+                            aria-label="Close filters"
+                        >
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+
+                    </div>
+
+
+                    <!-- SEARCH -->
+
+                    <div class="filter-block">
+
+                        <h3>
+                            Search
+                        </h3>
+
+                        <div class="product-search-box">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input
+                                type="search"
+                                id="productSearch"
+                                placeholder="Search products..."
+                                autocomplete="off"
+                            >
+
+                            <button
+                                type="button"
+                                id="clearSearchBtn"
+                                aria-label="Clear search"
+                            >
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CATEGORY -->
+
+                    <div class="filter-block">
+
+                        <div class="filter-heading-row">
+
+                            <h3>
+                                Categories
+                            </h3>
+
+                        </div>
+
+
+                        <div
+                            class="category-list"
+                            id="categoryList"
+                        >
+
+                            <button
+                                type="button"
+                                class="category-filter active"
+                                data-category="all"
+                            >
+                                <span>
+                                    <i class="fa-solid fa-layer-group"></i>
+                                    All Products
+                                </span>
+
+                                <b id="allCategoryCount">
+                                    0
+                                </b>
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="category-filter"
+                                data-category="Smartphone"
+                            >
+                                <span>
+                                    <i class="fa-solid fa-mobile-screen"></i>
+                                    Smartphones
+                                </span>
+
+                                <b data-count-category="Smartphone">
+                                    0
+                                </b>
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="category-filter"
+                                data-category="Laptop"
+                            >
+                                <span>
+                                    <i class="fa-solid fa-laptop"></i>
+                                    Laptops
+                                </span>
+
+                                <b data-count-category="Laptop">
+                                    0
+                                </b>
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="category-filter"
+                                data-category="Headphones"
+                            >
+                                <span>
+                                    <i class="fa-solid fa-headphones"></i>
+                                    Headphones
+                                </span>
+
+                                <b data-count-category="Headphones">
+                                    0
+                                </b>
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="category-filter"
+                                data-category="Smart Watch"
+                            >
+                                <span>
+                                    <i class="fa-solid fa-clock"></i>
+                                    Smart Watches
+                                </span>
+
+                                <b data-count-category="Smart Watch">
+                                    0
+                                </b>
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="category-filter"
+                                data-category="Earbuds"
+                            >
+                                <span>
+                                    <i class="fa-solid fa-ear-listen"></i>
+                                    Earbuds
+                                </span>
+
+                                <b data-count-category="Earbuds">
+                                    0
+                                </b>
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="category-filter"
+                                data-category="Accessories"
+                            >
+                                <span>
+                                    <i class="fa-solid fa-plug"></i>
+                                    Accessories
+                                </span>
+
+                                <b data-count-category="Accessories">
+                                    0
+                                </b>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PRICE -->
+
+                    <div class="filter-block">
+
+                        <h3>
+                            Price Range
+                        </h3>
+
+                        <div class="price-inputs">
+
+                            <input
+                                type="number"
+                                id="minPrice"
+                                placeholder="Min ₹"
+                                min="0"
+                            >
+
+                            <span>
+                                -
+                            </span>
+
+                            <input
+                                type="number"
+                                id="maxPrice"
+                                placeholder="Max ₹"
+                                min="0"
+                            >
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="apply-price-btn"
+                            id="applyPriceBtn"
+                        >
+                            Apply Price
+                        </button>
+
+                    </div>
+
+
+                    <!-- RATING -->
+
+                    <div class="filter-block">
+
+                        <h3>
+                            Customer Rating
+                        </h3>
+
+                        <div class="rating-filters">
+
+                            <button
+                                type="button"
+                                class="rating-filter"
+                                data-rating="4"
+                            >
+                                <span class="stars">
+                                    ★★★★★
+                                </span>
+
+                                <span>
+                                    4★ & above
+                                </span>
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="rating-filter"
+                                data-rating="3"
+                            >
+                                <span class="stars">
+                                    ★★★★★
+                                </span>
+
+                                <span>
+                                    3★ & above
+                                </span>
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="rating-filter"
+                                data-rating="2"
+                            >
+                                <span class="stars">
+                                    ★★★★★
+                                </span>
+
+                                <span>
+                                    2★ & above
+                                </span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CLEAR -->
+
+                    <button
+                        type="button"
+                        class="clear-filters-btn"
+                        id="clearFiltersBtn"
+                    >
+                        <i class="fa-solid fa-rotate-left"></i>
+                        Clear All Filters
+                    </button>
+
+                </aside>
+
+
+                <!-- OVERLAY -->
+
+                <div
+                    class="products-sidebar-overlay"
+                    id="sidebarOverlay"
+                ></div>
+
+
+                <!-- ================= PRODUCTS ================= -->
+
+                <section class="products-content">
+
+                    <!-- ACTIVE FILTERS -->
+
+                    <div
+                        class="active-filters"
+                        id="activeFilters"
+                    ></div>
+
+
+                    <!-- PRODUCT GRID -->
+
+                    <div
+                        class="products-grid"
+                        id="productsGrid"
+                    ></div>
+
+
+                    <!-- NO RESULTS -->
+
+                    <div
+                        class="products-no-results"
+                        id="productsNoResults"
+                        hidden
+                    >
+
+                        <div class="no-results-icon">
+                            <i class="fa-solid fa-box-open"></i>
+                        </div>
+
+                        <h2>
+                            No Products Found
+                        </h2>
+
+                        <p>
+                            We couldn't find any products matching
+                            your current filters.
+                        </p>
+
+                        <button
+                            type="button"
+                            id="noResultsClearBtn"
+                        >
+                            Clear Filters
+                        </button>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= QUICK VIEW MODAL ================= -->
+
+    <div
+        class="quick-view-modal"
+        id="quickViewModal"
+        aria-hidden="true"
+    >
+
+        <div class="quick-view-overlay"></div>
+
+        <div class="quick-view-box">
+
+            <button
+                type="button"
+                class="quick-view-close"
+                id="quickViewClose"
+                aria-label="Close quick view"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+
+            <div
+                class="quick-view-content"
+                id="quickViewContent"
+            >
+
+                <!-- JS CONTENT -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= TOAST ================= -->
+
+    <div
+        class="products-toast"
+        id="productsToast"
+        role="status"
+        aria-live="polite"
+    >
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <span id="toastMessage">
+            Product added to cart
+        </span>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="products-footer">
+
+        <div class="products-footer-inner">
+
+            <div class="products-footer-brand">
+
+                <a
+                    href="index.html"
+                    class="products-footer-logo"
+                >
+                    <span class="logo-icon">
+                        <i class="fa-solid fa-bolt"></i>
+                    </span>
+
+                    <span>
+                        <strong>KHAN</strong>
+                        <small>Store</small>
+                    </span>
+                </a>
+
+                <p>
+                    Premium technology and smart gadgets
+                    for everyday life.
+                </p>
+
+                <div class="products-socials">
+
+                    <a href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="X">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+                    <a href="#" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="products-footer-column">
+
+                <h3>
+                    Shop
+                </h3>
+
+                <a href="products.html">
+                    All Products
+                </a>
+
+                <a href="index.html#flash-deals">
+                    Flash Deals
+                </a>
+
+                <a href="wishlist.html">
+                    Wishlist
+                </a>
+
+                <a href="cart.html">
+                    Shopping Cart
+                </a>
+
+            </div>
+
+
+            <div class="products-footer-column">
+
+                <h3>
+                    Company
+                </h3>
+
+                <a href="about.html">
+                    About Us
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="help.html">
+                    Help Center
+                </a>
+
+                <a href="sell-with-us.html">
+                    Sell With Us
+                </a>
+
+            </div>
+
+
+            <div class="products-footer-column">
+
+                <h3>
+                    Support
+                </h3>
+
+                <a href="track-order.html">
+                    Track Order
+                </a>
+
+                <a href="my-orders.html">
+                    My Orders
+                </a>
+
+                <a href="privacy-policy.html">
+                    Privacy Policy
+                </a>
+
+                <a href="terms.html">
+                    Terms & Conditions
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="products-footer-bottom">
+
+            <p>
+                © <span id="currentYear"></span>
+                KHAN Store. All rights reserved.
+            </p>
+
+            <div>
+
+                <span>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Secure Shopping
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-truck-fast"></i>
+                    Fast Delivery
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-rotate-left"></i>
+                    Easy Returns
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= SCRIPTS ================= -->
+
+    <script src="products.js"></script>
+
+</body>
+</html>

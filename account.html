@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Account | KHAN Store</title>
+
+    <link rel="stylesheet" href="account.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    >
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="account-header">
+
+    <a href="index.html" class="logo">
+        <span>KHAN</span> Store
+    </a>
+
+    <div class="header-actions">
+
+        <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            Home
+        </a>
+
+        <a href="cart.html">
+            <i class="fa-solid fa-cart-shopping"></i>
+            Cart
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="account-page">
+
+    <div class="account-container">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="account-sidebar">
+
+            <div class="profile-mini">
+
+                <div class="profile-avatar" id="sidebarAvatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div>
+
+                    <h3 id="sidebarName">
+                        Guest User
+                    </h3>
+
+                    <p id="sidebarEmail">
+                        Please login
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <nav class="account-menu">
+
+                <button
+                    class="menu-item active"
+                    data-section="profile"
+                >
+                    <i class="fa-regular fa-user"></i>
+                    <span>My Profile</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+
+                <a
+                    href="my-orders.html"
+                    class="menu-item"
+                >
+                    <i class="fa-solid fa-box"></i>
+                    <span>My Orders</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+
+                <a
+                    href="wishlist.html"
+                    class="menu-item"
+                >
+                    <i class="fa-regular fa-heart"></i>
+                    <span>My Wishlist</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+
+                <a
+                    href="cart.html"
+                    class="menu-item"
+                >
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>My Cart</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+
+                <a
+                    href="index.html"
+                    class="menu-item"
+                >
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>Continue Shopping</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+
+                <button
+                    class="menu-item logout-item"
+                    id="logoutBtn"
+                >
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- ================= CONTENT ================= -->
+
+        <section class="account-content">
+
+            <!-- PROFILE -->
+
+            <div
+                class="account-section active"
+                id="profileSection"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+                        <h1>My Profile</h1>
+
+                        <p>
+                            Manage your personal account information.
+                        </p>
+                    </div>
+
+                    <button
+                        class="edit-btn"
+                        id="editProfileBtn"
+                    >
+                        <i class="fa-solid fa-pen"></i>
+                        Edit Profile
+                    </button>
+
+                </div>
+
+
+                <!-- PROFILE CARD -->
+
+                <div class="profile-card">
+
+                    <div class="large-avatar" id="largeAvatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="profile-card-info">
+
+                        <h2 id="profileName">
+                            Guest User
+                        </h2>
+
+                        <p id="profileEmail">
+                            Not logged in
+                        </p>
+
+                        <span class="account-badge">
+                            <i class="fa-solid fa-circle-check"></i>
+                            KHAN Store Customer
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DETAILS -->
+
+                <div class="details-card">
+
+                    <div class="card-title">
+
+                        <h2>Personal Information</h2>
+
+                        <i class="fa-regular fa-id-card"></i>
+
+                    </div>
+
+
+                    <div class="details-grid">
+
+                        <div class="detail-item">
+
+                            <span>Full Name</span>
+
+                            <strong id="detailName">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span>Email Address</span>
+
+                            <strong id="detailEmail">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span>Mobile Number</span>
+
+                            <strong id="detailPhone">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span>Account Created</span>
+
+                            <strong id="detailCreated">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUICK LINKS -->
+
+                <div class="quick-section">
+
+                    <h2>Quick Access</h2>
+
+                    <div class="quick-grid">
+
+                        <a href="my-orders.html" class="quick-card">
+
+                            <div class="quick-icon">
+                                <i class="fa-solid fa-box-open"></i>
+                            </div>
+
+                            <div>
+                                <h3>My Orders</h3>
+                                <p>View and track your orders</p>
+                            </div>
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+
+                        <a href="wishlist.html" class="quick-card">
+
+                            <div class="quick-icon">
+                                <i class="fa-regular fa-heart"></i>
+                            </div>
+
+                            <div>
+                                <h3>Wishlist</h3>
+                                <p>View your saved products</p>
+                            </div>
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+
+                        <a href="cart.html" class="quick-card">
+
+                            <div class="quick-icon">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+
+                            <div>
+                                <h3>Shopping Cart</h3>
+                                <p>Continue your shopping</p>
+                            </div>
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+
+                        <a href="index.html" class="quick-card">
+
+                            <div class="quick-icon">
+                                <i class="fa-solid fa-store"></i>
+                            </div>
+
+                            <div>
+                                <h3>Shop Now</h3>
+                                <p>Explore latest products</p>
+                            </div>
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<!-- ================= EDIT MODAL ================= -->
+
+<div
+    class="modal-overlay"
+    id="editModal"
+>
+
+    <div class="edit-modal">
+
+        <button
+            class="close-modal"
+            id="closeModal"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="modal-heading">
+
+            <div class="modal-icon">
+                <i class="fa-solid fa-user-pen"></i>
+            </div>
+
+            <div>
+
+                <h2>Edit Profile</h2>
+
+                <p>
+                    Update your account information.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <form id="profileForm">
+
+            <div class="modal-form-group">
+
+                <label for="editName">
+                    Full Name
+                </label>
+
+                <div class="modal-input">
+
+                    <i class="fa-regular fa-user"></i>
+
+                    <input
+                        type="text"
+                        id="editName"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-form-group">
+
+                <label for="editEmail">
+                    Email Address
+                </label>
+
+                <div class="modal-input">
+
+                    <i class="fa-regular fa-envelope"></i>
+
+                    <input
+                        type="email"
+                        id="editEmail"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-form-group">
+
+                <label for="editPhone">
+                    Mobile Number
+                </label>
+
+                <div class="modal-input">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <input
+                        type="tel"
+                        id="editPhone"
+                        maxlength="10"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    id="cancelEdit"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="save-btn"
+                >
+                    <i class="fa-solid fa-check"></i>
+                    Save Changes
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+
+<div class="toast" id="toast">
+
+    <i id="toastIcon" class="fa-solid fa-circle-check"></i>
+
+    <span id="toastMessage">
+        Profile updated
+    </span>
+
+</div>
+
+
+<script src="account.js"></script>
+
+</body>
+</html>

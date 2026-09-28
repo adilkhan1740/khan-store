@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Settings — KHAN Store Admin</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <link rel="stylesheet" href="admin-settings.css">
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-bolt"></i>
+            </div>
+
+            <div>
+                <h2>KHAN Store</h2>
+                <span>Admin Panel</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="admin-dashboard.html">
+                <i class="fa-solid fa-gauge-high"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="admin-orders.html">
+                <i class="fa-solid fa-box"></i>
+                <span>Orders</span>
+            </a>
+
+            <a href="admin-products.html">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Products</span>
+            </a>
+
+            <a href="admin-customers.html">
+                <i class="fa-solid fa-users"></i>
+                <span>Customers</span>
+            </a>
+
+            <a href="admin-analytics.html">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Analytics</span>
+            </a>
+
+            <a href="admin-settings.html" class="active">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="index.html" target="_blank">
+                <i class="fa-solid fa-store"></i>
+                <span>View Store</span>
+            </a>
+
+            <button type="button" id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-content">
+
+        <!-- HEADER -->
+
+        <header class="top-header">
+
+            <div class="header-left">
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div>
+                    <h1>Settings</h1>
+                    <p>Manage your KHAN Store configuration</p>
+                </div>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <div class="admin-profile">
+
+                    <div class="admin-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="admin-profile-info">
+                        <strong id="adminName">Administrator</strong>
+                        <span>Store Admin</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= CONTENT ================= -->
+
+        <section class="settings-page">
+
+            <div class="page-heading">
+
+                <div>
+                    <h2>Store Settings</h2>
+                    <p>Configure your store information and preferences.</p>
+                </div>
+
+                <div class="heading-actions">
+
+                    <button class="btn btn-secondary" id="resetSettingsBtn">
+                        <i class="fa-solid fa-rotate-left"></i>
+                        Reset
+                    </button>
+
+                    <button class="btn btn-primary" id="saveSettingsBtn">
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        Save Changes
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= STORE INFORMATION ================= -->
+
+            <div class="settings-card">
+
+                <div class="card-header">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+
+                    <div>
+                        <h3>Store Information</h3>
+                        <p>Basic information about your online store.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="storeName">
+                            Store Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="storeName"
+                            placeholder="KHAN Store"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="storeEmail">
+                            Store Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="storeEmail"
+                            placeholder="support@khanstore.com"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="storePhone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="text"
+                            id="storePhone"
+                            placeholder="+91 98765 43210"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="storeCurrency">
+                            Currency
+                        </label>
+
+                        <select id="storeCurrency">
+
+                            <option value="INR">
+                                Indian Rupee (₹)
+                            </option>
+
+                            <option value="USD">
+                                US Dollar ($)
+                            </option>
+
+                            <option value="EUR">
+                                Euro (€)
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group full-width">
+
+                        <label for="storeAddress">
+                            Store Address
+                        </label>
+
+                        <textarea
+                            id="storeAddress"
+                            rows="3"
+                            placeholder="Enter store address"
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= DELIVERY SETTINGS ================= -->
+
+            <div class="settings-card">
+
+                <div class="card-header">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+
+                    <div>
+                        <h3>Delivery Settings</h3>
+                        <p>Configure shipping and delivery options.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="freeDeliveryAmount">
+                            Free Delivery Above
+                        </label>
+
+                        <div class="input-with-prefix">
+                            <span>₹</span>
+
+                            <input
+                                type="number"
+                                id="freeDeliveryAmount"
+                                min="0"
+                                placeholder="999"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="deliveryCharge">
+                            Standard Delivery Charge
+                        </label>
+
+                        <div class="input-with-prefix">
+                            <span>₹</span>
+
+                            <input
+                                type="number"
+                                id="deliveryCharge"
+                                min="0"
+                                placeholder="49"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="estimatedDelivery">
+                            Estimated Delivery
+                        </label>
+
+                        <select id="estimatedDelivery">
+
+                            <option value="2-4">
+                                2–4 Business Days
+                            </option>
+
+                            <option value="3-5">
+                                3–5 Business Days
+                            </option>
+
+                            <option value="5-7">
+                                5–7 Business Days
+                            </option>
+
+                            <option value="7-10">
+                                7–10 Business Days
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="returnDays">
+                            Return Window
+                        </label>
+
+                        <select id="returnDays">
+
+                            <option value="7">7 Days</option>
+                            <option value="10">10 Days</option>
+                            <option value="15">15 Days</option>
+                            <option value="30">30 Days</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= TAX SETTINGS ================= -->
+
+            <div class="settings-card">
+
+                <div class="card-header">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-receipt"></i>
+                    </div>
+
+                    <div>
+                        <h3>Tax & Pricing</h3>
+                        <p>Manage tax and pricing preferences.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="taxRate">
+                            Default Tax Rate
+                        </label>
+
+                        <div class="input-with-suffix">
+
+                            <input
+                                type="number"
+                                id="taxRate"
+                                min="0"
+                                max="100"
+                                step="0.01"
+                                placeholder="18"
+                            >
+
+                            <span>%</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="taxMode">
+                            Tax Display
+                        </label>
+
+                        <select id="taxMode">
+
+                            <option value="included">
+                                Tax Included in Price
+                            </option>
+
+                            <option value="excluded">
+                                Tax Added at Checkout
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= NOTIFICATIONS ================= -->
+
+            <div class="settings-card">
+
+                <div class="card-header">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+
+                    <div>
+                        <h3>Notifications</h3>
+                        <p>Choose which store notifications are enabled.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="notification-list">
+
+                    <label class="toggle-row">
+
+                        <div class="toggle-content">
+
+                            <strong>New Order Notifications</strong>
+
+                            <span>
+                                Receive notifications when a new order is placed.
+                            </span>
+
+                        </div>
+
+                        <input
+                            type="checkbox"
+                            id="newOrderNotification"
+                            checked
+                        >
+
+                        <span class="toggle-switch"></span>
+
+                    </label>
+
+
+                    <label class="toggle-row">
+
+                        <div class="toggle-content">
+
+                            <strong>New Customer Notifications</strong>
+
+                            <span>
+                                Get notified when a new customer registers.
+                            </span>
+
+                        </div>
+
+                        <input
+                            type="checkbox"
+                            id="newCustomerNotification"
+                            checked
+                        >
+
+                        <span class="toggle-switch"></span>
+
+                    </label>
+
+
+                    <label class="toggle-row">
+
+                        <div class="toggle-content">
+
+                            <strong>Low Stock Alerts</strong>
+
+                            <span>
+                                Show alerts when products have low stock.
+                            </span>
+
+                        </div>
+
+                        <input
+                            type="checkbox"
+                            id="lowStockNotification"
+                            checked
+                        >
+
+                        <span class="toggle-switch"></span>
+
+                    </label>
+
+
+                    <label class="toggle-row">
+
+                        <div class="toggle-content">
+
+                            <strong>Marketing Notifications</strong>
+
+                            <span>
+                                Enable promotional and marketing notifications.
+                            </span>
+
+                        </div>
+
+                        <input
+                            type="checkbox"
+                            id="marketingNotification"
+                        >
+
+                        <span class="toggle-switch"></span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= SECURITY ================= -->
+
+            <div class="settings-card">
+
+                <div class="card-header">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+
+                    <div>
+                        <h3>Security</h3>
+                        <p>Manage administrator security settings.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="security-info">
+
+                    <div class="security-row">
+
+                        <div class="security-icon">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+
+                        <div class="security-text">
+
+                            <strong>Administrator Password</strong>
+
+                            <span>
+                                Keep your admin account secure with a strong password.
+                            </span>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            id="changePasswordBtn"
+                        >
+                            Change Password
+                        </button>
+
+                    </div>
+
+
+                    <div class="security-row">
+
+                        <div class="security-icon">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+
+                        <div class="security-text">
+
+                            <strong>Local Store Data</strong>
+
+                            <span>
+                                Store settings are currently saved in browser storage.
+                            </span>
+
+                        </div>
+
+                        <span class="security-status">
+                            <i class="fa-solid fa-circle-check"></i>
+                            Active
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= CHANGE PASSWORD MODAL ================= -->
+
+<div class="modal-overlay" id="passwordModal">
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <div>
+                <h3>Change Password</h3>
+                <p>Update your administrator password.</p>
+            </div>
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closePasswordModal"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <form id="passwordForm">
+
+            <div class="form-group">
+
+                <label for="currentPassword">
+                    Current Password
+                </label>
+
+                <input
+                    type="password"
+                    id="currentPassword"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="newPassword">
+                    New Password
+                </label>
+
+                <input
+                    type="password"
+                    id="newPassword"
+                    minlength="6"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="confirmPassword">
+                    Confirm New Password
+                </label>
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    minlength="6"
+                    required
+                >
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="cancelPasswordBtn"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                >
+                    Update Password
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+
+<div class="toast" id="toast">
+
+    <div class="toast-icon">
+        <i class="fa-solid fa-check"></i>
+    </div>
+
+    <div>
+        <strong id="toastTitle">Success</strong>
+        <span id="toastMessage">Settings saved successfully.</span>
+    </div>
+
+</div>
+
+
+<script src="admin-settings.js"></script>
+
+</body>
+</html>

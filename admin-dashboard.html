@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | KHAN Store</title>
+
+    <meta
+        name="description"
+        content="KHAN Store Admin Dashboard"
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="admin-dashboard.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="admin-sidebar" id="adminSidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="brand-icon">
+                <i class="fa-solid fa-bolt"></i>
+            </div>
+
+            <div class="brand-text">
+                <strong>KHAN Store</strong>
+                <span>Admin Panel</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <!-- DASHBOARD -->
+            <a
+                href="admin-dashboard.html"
+                class="nav-item active"
+            >
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Dashboard</span>
+            </a>
+
+
+            <!-- ORDERS -->
+            <a
+                href="admin-orders.html"
+                class="nav-item"
+                data-page="orders"
+            >
+                <i class="fa-solid fa-box"></i>
+                <span>Orders</span>
+                <span class="nav-badge" id="sidebarOrderCount">0</span>
+            </a>
+
+
+            <!-- PRODUCTS -->
+            <a
+                href="admin-products.html"
+                class="nav-item"
+                data-page="products"
+            >
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <span>Products</span>
+            </a>
+
+
+            <!-- CUSTOMERS -->
+            <a
+                href="admin-customers.html"
+                class="nav-item"
+                data-page="customers"
+            >
+                <i class="fa-solid fa-users"></i>
+                <span>Customers</span>
+            </a>
+
+
+            <!-- ANALYTICS -->
+            <a
+                href="admin-analytics.html"
+                class="nav-item"
+                data-page="analytics"
+            >
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Analytics</span>
+            </a>
+
+
+            <!-- SETTINGS -->
+            <a
+                href="admin-settings.html"
+                class="nav-item"
+                data-page="settings"
+            >
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <!-- VIEW STORE -->
+            <a
+                href="index.html"
+                class="nav-item"
+            >
+                <i class="fa-solid fa-store"></i>
+                <span>View Store</span>
+            </a>
+
+
+            <!-- LOGOUT -->
+            <button
+                type="button"
+                class="nav-item logout-btn"
+                id="adminLogoutBtn"
+            >
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="admin-main">
+
+        <!-- ================= HEADER ================= -->
+
+        <header class="admin-header">
+
+            <div class="header-left">
+
+                <button
+                    type="button"
+                    class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Open menu"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Welcome back, Admin</p>
+                </div>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <button
+                    type="button"
+                    class="header-icon-btn"
+                    id="notificationBtn"
+                    aria-label="Notifications"
+                >
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+
+                <div class="admin-profile">
+
+                    <div class="admin-avatar">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+
+                    <div class="admin-profile-info">
+
+                        <strong id="adminName">
+                            KHAN Store Admin
+                        </strong>
+
+                        <span id="adminEmail">
+                            admin@khanstore.com
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down profile-arrow"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= CONTENT ================= -->
+
+        <section class="dashboard-content">
+
+
+            <!-- ================= WELCOME ================= -->
+
+            <div class="welcome-card">
+
+                <div class="welcome-content">
+
+                    <span class="welcome-label">
+                        ADMIN PANEL
+                    </span>
+
+                    <h2>
+                        Welcome back, Admin 👋
+                    </h2>
+
+                    <p>
+                        Manage your KHAN Store orders, products,
+                        customers and store activity from here.
+                    </p>
+
+                </div>
+
+                <div class="welcome-icon">
+                    <i class="fa-solid fa-chart-column"></i>
+                </div>
+
+            </div>
+
+
+            <!-- ================= STATS ================= -->
+
+            <div class="stats-grid">
+
+
+                <!-- ORDERS -->
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon orders-icon">
+                            <i class="fa-solid fa-box"></i>
+                        </div>
+
+                        <span class="stat-label">
+                            ORDERS
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="stat-value"
+                        id="totalOrders"
+                    >
+                        0
+                    </div>
+
+                    <div class="stat-bottom">
+
+                        <span class="stat-description">
+                            Total orders
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- REVENUE -->
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon revenue-icon">
+                            <i class="fa-solid fa-indian-rupee-sign"></i>
+                        </div>
+
+                        <span class="stat-label">
+                            REVENUE
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="stat-value"
+                        id="totalRevenue"
+                    >
+                        ₹0
+                    </div>
+
+                    <div class="stat-bottom">
+
+                        <span class="stat-description">
+                            Total sales
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CUSTOMERS -->
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon customers-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+
+                        <span class="stat-label">
+                            CUSTOMERS
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="stat-value"
+                        id="totalCustomers"
+                    >
+                        0
+                    </div>
+
+                    <div class="stat-bottom">
+
+                        <span class="stat-description">
+                            Registered customers
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PENDING -->
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon pending-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+
+                        <span class="stat-label">
+                            PENDING
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="stat-value"
+                        id="pendingOrders"
+                    >
+                        0
+                    </div>
+
+                    <div class="stat-bottom">
+
+                        <span class="stat-description">
+                            Orders awaiting processing
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= QUICK ACTIONS ================= -->
+
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-eyebrow">
+                            MANAGEMENT
+                        </span>
+
+                        <h2>
+                            Quick Actions
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-actions">
+
+
+                    <!-- ORDERS -->
+
+                    <button
+                        type="button"
+                        class="quick-action"
+                        data-page="admin-orders.html"
+                    >
+
+                        <div class="quick-icon">
+                            <i class="fa-solid fa-box-open"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Manage Orders
+                            </strong>
+
+                            <span>
+                                View and update customer orders
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+
+                    <!-- PRODUCTS -->
+
+                    <button
+                        type="button"
+                        class="quick-action"
+                        data-page="admin-products.html"
+                    >
+
+                        <div class="quick-icon">
+                            <i class="fa-solid fa-cube"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Manage Products
+                            </strong>
+
+                            <span>
+                                Add and manage store products
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+
+                    <!-- CUSTOMERS -->
+
+                    <button
+                        type="button"
+                        class="quick-action"
+                        data-page="admin-customers.html"
+                    >
+
+                        <div class="quick-icon">
+                            <i class="fa-solid fa-user-group"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Customers
+                            </strong>
+
+                            <span>
+                                View registered customers
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+
+                    <!-- ANALYTICS -->
+
+                    <button
+                        type="button"
+                        class="quick-action"
+                        data-page="admin-analytics.html"
+                    >
+
+                        <div class="quick-icon">
+                            <i class="fa-solid fa-chart-simple"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Analytics
+                            </strong>
+
+                            <span>
+                                View store performance
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= RECENT ORDERS ================= -->
+
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-eyebrow">
+                            ORDERS
+                        </span>
+
+                        <h2>
+                            Recent Orders
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="view-all-btn"
+                        data-page="admin-orders.html"
+                    >
+                        View All
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="orders-table-wrapper">
+
+                    <table class="orders-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Order ID
+                                </th>
+
+                                <th>
+                                    Customer
+                                </th>
+
+                                <th>
+                                    Items
+                                </th>
+
+                                <th>
+                                    Total
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Action
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="recentOrdersBody">
+
+                            <tr class="empty-table-row">
+
+                                <td colspan="6">
+
+                                    <div class="table-empty">
+
+                                        <i class="fa-solid fa-box-open"></i>
+
+                                        <strong>
+                                            No orders yet
+                                        </strong>
+
+                                        <span>
+                                            Customer orders will appear here.
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= ORDER STATUS ================= -->
+
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-eyebrow">
+                            ORDER STATUS
+                        </span>
+
+                        <h2>
+                            Order Overview
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="status-grid">
+
+
+                    <!-- PLACED -->
+
+                    <div class="status-card">
+
+                        <div class="status-card-icon placed">
+                            <i class="fa-solid fa-receipt"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Placed
+                            </span>
+
+                            <strong id="placedCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PROCESSING -->
+
+                    <div class="status-card">
+
+                        <div class="status-card-icon processing">
+                            <i class="fa-solid fa-gears"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Processing
+                            </span>
+
+                            <strong id="processingCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SHIPPED -->
+
+                    <div class="status-card">
+
+                        <div class="status-card-icon shipped">
+                            <i class="fa-solid fa-truck"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Shipped
+                            </span>
+
+                            <strong id="shippedCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- OUT FOR DELIVERY -->
+
+                    <div class="status-card">
+
+                        <div class="status-card-icon delivery">
+                            <i class="fa-solid fa-motorcycle"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Out for Delivery
+                            </span>
+
+                            <strong id="outDeliveryCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DELIVERED -->
+
+                    <div class="status-card">
+
+                        <div class="status-card-icon delivered">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Delivered
+                            </span>
+
+                            <strong id="deliveredCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= SYSTEM INFO ================= -->
+
+            <section class="dashboard-section">
+
+                <div class="system-card">
+
+                    <div class="system-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+
+                    <div class="system-content">
+
+                        <strong>
+                            KHAN Store Admin System
+                        </strong>
+
+                        <span>
+                            Admin dashboard is connected to your current
+                            KHAN Store frontend order system.
+                        </span>
+
+                    </div>
+
+                    <span class="system-status">
+
+                        <i class="fa-solid fa-circle"></i>
+
+                        Active
+
+                    </span>
+
+                </div>
+
+            </section>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= TOAST ================= -->
+
+    <div
+        class="admin-toast"
+        id="adminToast"
+        role="status"
+        aria-live="polite"
+    >
+
+        <div class="toast-icon">
+            <i class="fa-solid fa-check"></i>
+        </div>
+
+        <div>
+
+            <strong id="adminToastTitle">
+                Success
+            </strong>
+
+            <span id="adminToastText">
+                Action completed successfully.
+            </span>
+
+        </div>
+
+        <button
+            type="button"
+            id="closeToast"
+            aria-label="Close notification"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+    </div>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="admin-dashboard.js"></script>
+
+</body>
+</html>

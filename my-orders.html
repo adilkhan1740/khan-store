@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Orders - KHAN Store</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="my-orders.css">
+</head>
+
+<body>
+
+<header class="orders-header">
+
+    <div class="orders-header-inner">
+
+        <a href="index.html" class="logo">
+            <span class="logo-main">KHAN</span>
+            <span class="logo-store">STORE</span>
+        </a>
+
+        <div class="header-title">
+            <i class="fa-solid fa-box"></i>
+            <span>My Orders</span>
+        </div>
+
+        <a href="index.html" class="continue-shopping">
+            <i class="fa-solid fa-bag-shopping"></i>
+            Continue Shopping
+        </a>
+
+    </div>
+
+</header>
+
+
+<main class="orders-page">
+
+    <div class="orders-container">
+
+        <!-- PAGE TITLE -->
+
+        <section class="page-heading">
+
+            <div>
+
+                <span class="heading-label">
+                    <i class="fa-solid fa-receipt"></i>
+                    ORDER HISTORY
+                </span>
+
+                <h1>
+                    My Orders
+                </h1>
+
+                <p>
+                    Track and view all your KHAN Store orders.
+                </p>
+
+            </div>
+
+            <div class="order-count-box">
+
+                <strong id="orderCount">
+                    0
+                </strong>
+
+                <span>
+                    Total Orders
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- FILTER -->
+
+        <section class="orders-toolbar">
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="orderSearch"
+                    placeholder="Search by Order ID..."
+                >
+
+            </div>
+
+
+            <select id="statusFilter">
+
+                <option value="all">
+                    All Orders
+                </option>
+
+                <option value="Placed">
+                    Order Placed
+                </option>
+
+                <option value="Processing">
+                    Processing
+                </option>
+
+                <option value="Shipped">
+                    Shipped
+                </option>
+
+                <option value="Delivered">
+                    Delivered
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <!-- ORDERS -->
+
+        <section
+            class="orders-list"
+            id="ordersList"
+        ></section>
+
+
+        <!-- EMPTY -->
+
+        <section
+            class="empty-orders"
+            id="emptyOrders"
+            style="display:none;"
+        >
+
+            <div class="empty-icon">
+
+                <i class="fa-solid fa-box-open"></i>
+
+            </div>
+
+            <h2>
+                No Orders Found
+            </h2>
+
+            <p>
+                You haven't placed any orders yet.
+            </p>
+
+            <a
+                href="index.html"
+                class="shop-now-btn"
+            >
+
+                <i class="fa-solid fa-bag-shopping"></i>
+
+                Start Shopping
+
+            </a>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<div
+    class="orders-toast"
+    id="ordersToast"
+>
+
+    <i class="fa-solid fa-check"></i>
+
+    <span id="ordersToastText">
+        Order ID copied.
+    </span>
+
+</div>
+
+
+<script src="my-orders.js"></script>
+
+</body>
+</html>

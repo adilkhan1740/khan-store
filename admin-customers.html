@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Customers | KHAN Store Admin</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="admin-customers.css"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    >
+</head>
+
+<body class="admin-body">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="admin-sidebar" id="adminSidebar">
+
+        <div class="admin-logo">
+
+            <div class="admin-logo-icon">
+                <i class="fa-solid fa-bolt"></i>
+            </div>
+
+            <div>
+                <strong>KHAN Store</strong>
+                <span>Admin Panel</span>
+            </div>
+
+        </div>
+
+
+        <nav class="admin-nav">
+
+            <a href="admin-dashboard.html">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="admin-orders.html">
+                <i class="fa-solid fa-box"></i>
+                <span>Orders</span>
+            </a>
+
+            <a href="admin-products.html">
+                <i class="fa-solid fa-boxes-stacked"></i>
+                <span>Products</span>
+            </a>
+
+            <a
+                href="admin-customers.html"
+                class="active"
+            >
+                <i class="fa-solid fa-users"></i>
+                <span>Customers</span>
+            </a>
+
+            <a href="admin-analytics.html">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Analytics</span>
+            </a>
+
+        </nav>
+
+
+        <div class="admin-sidebar-bottom">
+
+            <a href="index.html">
+                <i class="fa-solid fa-store"></i>
+                <span>View Store</span>
+            </a>
+
+            <button
+                type="button"
+                id="logoutBtn"
+            >
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="admin-main">
+
+        <!-- HEADER -->
+
+        <header class="admin-header">
+
+            <div class="admin-header-left">
+
+                <button
+                    type="button"
+                    class="admin-menu-btn"
+                    id="adminMenuBtn"
+                    aria-label="Open menu"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div>
+
+                    <p class="admin-header-small">
+                        KHAN Store
+                    </p>
+
+                    <h1>
+                        Customers
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-header-right">
+
+                <button
+                    type="button"
+                    class="admin-icon-btn"
+                    id="refreshCustomersBtn"
+                    title="Refresh"
+                >
+                    <i class="fa-solid fa-rotate"></i>
+                </button>
+
+
+                <div class="admin-user">
+
+                    <div class="admin-user-avatar">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+
+                    <div class="admin-user-info">
+
+                        <strong id="adminName">
+                            KHAN Store Admin
+                        </strong>
+
+                        <span id="adminEmail">
+                            admin@khanstore.com
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= PAGE CONTENT ================= -->
+
+        <section class="admin-content">
+
+            <div class="page-heading">
+
+                <div>
+
+                    <span class="page-kicker">
+                        CUSTOMER MANAGEMENT
+                    </span>
+
+                    <h2>
+                        Store Customers
+                    </h2>
+
+                    <p>
+                        Manage registered customers and
+                        view their shopping information.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= STATS ================= -->
+
+            <div class="customer-stats">
+
+                <div class="customer-stat-card">
+
+                    <div class="stat-icon blue">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Total Customers
+                        </span>
+
+                        <strong id="totalCustomers">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="customer-stat-card">
+
+                    <div class="stat-icon green">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Active Customers
+                        </span>
+
+                        <strong id="activeCustomers">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="customer-stat-card">
+
+                    <div class="stat-icon purple">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            Customers With Orders
+                        </span>
+
+                        <strong id="customersWithOrders">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="customer-stat-card">
+
+                    <div class="stat-icon orange">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span>
+                            New Customers
+                        </span>
+
+                        <strong id="newCustomers">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= TOOLBAR ================= -->
+
+            <div class="customers-toolbar">
+
+                <div class="customer-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="search"
+                        id="customerSearch"
+                        placeholder="Search by name, email or phone..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <div class="customer-filter">
+
+                    <select id="customerFilter">
+
+                        <option value="all">
+                            All Customers
+                        </option>
+
+                        <option value="orders">
+                            With Orders
+                        </option>
+
+                        <option value="no-orders">
+                            No Orders
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="clear-search-btn"
+                    id="clearSearchBtn"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                    Clear
+                </button>
+
+            </div>
+
+
+            <!-- ================= RESULT INFO ================= -->
+
+            <div class="customer-result-bar">
+
+                <div>
+
+                    <strong id="resultCount">
+                        0 customers
+                    </strong>
+
+                    <span>
+                        found
+                    </span>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="sortCustomersBtn"
+                    class="sort-btn"
+                >
+                    <i class="fa-solid fa-arrow-down-a-z"></i>
+                    Sort A-Z
+                </button>
+
+            </div>
+
+
+            <!-- ================= TABLE ================= -->
+
+            <div class="customers-table-card">
+
+                <div class="table-responsive">
+
+                    <table class="customers-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Customer
+                                </th>
+
+                                <th>
+                                    Contact
+                                </th>
+
+                                <th>
+                                    Orders
+                                </th>
+
+                                <th>
+                                    Total Spent
+                                </th>
+
+                                <th>
+                                    Joined
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Action
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="customersTableBody">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- EMPTY -->
+
+                <div
+                    class="customers-empty"
+                    id="emptyCustomers"
+                    hidden
+                >
+
+                    <div class="empty-icon">
+                        <i class="fa-solid fa-users-slash"></i>
+                    </div>
+
+                    <h3>
+                        No customers found
+                    </h3>
+
+                    <p>
+                        No customer matches your current
+                        search or filter.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= CUSTOMER MODAL ================= -->
+
+    <div
+        class="customer-modal"
+        id="customerModal"
+        hidden
+    >
+
+        <div
+            class="customer-modal-overlay"
+            id="customerModalOverlay"
+        ></div>
+
+
+        <div class="customer-modal-box">
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeCustomerModal"
+                aria-label="Close"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+
+            <div class="customer-modal-header">
+
+                <div
+                    class="customer-large-avatar"
+                    id="modalAvatar"
+                >
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div>
+
+                    <span>
+                        CUSTOMER DETAILS
+                    </span>
+
+                    <h3 id="modalCustomerName">
+                        Customer
+                    </h3>
+
+                    <p id="modalCustomerEmail">
+                        -
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="customer-detail-grid">
+
+                <div class="customer-detail">
+
+                    <span>
+                        <i class="fa-solid fa-phone"></i>
+                        Phone
+                    </span>
+
+                    <strong id="modalCustomerPhone">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="customer-detail">
+
+                    <span>
+                        <i class="fa-solid fa-envelope"></i>
+                        Email
+                    </span>
+
+                    <strong id="modalCustomerEmail2">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="customer-detail">
+
+                    <span>
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Orders
+                    </span>
+
+                    <strong id="modalCustomerOrders">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="customer-detail">
+
+                    <span>
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+                        Total Spent
+                    </span>
+
+                    <strong id="modalCustomerSpent">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <div class="customer-detail">
+
+                    <span>
+                        <i class="fa-solid fa-calendar"></i>
+                        Joined
+                    </span>
+
+                    <strong id="modalCustomerJoined">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="customer-detail">
+
+                    <span>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Status
+                    </span>
+
+                    <strong
+                        id="modalCustomerStatus"
+                        class="customer-status active"
+                    >
+                        Active
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- CUSTOMER ORDERS -->
+
+            <div class="modal-orders-section">
+
+                <div class="modal-section-heading">
+
+                    <h4>
+                        Recent Orders
+                    </h4>
+
+                    <span id="modalOrderCount">
+                        0 orders
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="modal-orders-list"
+                    id="modalOrdersList"
+                >
+                </div>
+
+            </div>
+
+
+            <div class="customer-modal-actions">
+
+                <button
+                    type="button"
+                    class="modal-secondary-btn"
+                    id="closeCustomerModalBtn"
+                >
+                    Close
+                </button>
+
+                <button
+                    type="button"
+                    class="modal-primary-btn"
+                    id="viewCustomerOrdersBtn"
+                >
+                    <i class="fa-solid fa-box"></i>
+                    View Orders
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= TOAST ================= -->
+
+    <div
+        class="admin-toast"
+        id="adminToast"
+    >
+
+        <div class="toast-icon">
+            <i class="fa-solid fa-check"></i>
+        </div>
+
+        <div class="toast-content">
+
+            <strong id="adminToastTitle">
+                Success
+            </strong>
+
+            <span id="adminToastText">
+                Done
+            </span>
+
+            
+        </div>
+
+        <button
+            type="button"
+            id="closeToast"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+    </div>
+
+
+    <script src="admin-customers.js"></script>
+
+</body>
+</html>

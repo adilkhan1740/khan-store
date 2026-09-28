@@ -1,0 +1,266 @@
+
+
+/* =====================================================
+   KHAN STORE
+   RESPONSIVE STYLES
+===================================================== */
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+
+    .top-links {
+        display: none;
+    }
+
+
+    .header-content {
+        gap: 14px;
+    }
+
+
+    .account-link span {
+        display: none;
+    }
+
+
+    .nav-links {
+        gap: 16px;
+    }
+
+
+    .delivery-location {
+        display: none;
+    }
+
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .container {
+        width: 92%;
+    }
+
+
+    /* TOP BAR */
+
+    .top-bar {
+        display: none;
+    }
+
+
+    /* HEADER */
+
+    .main-header {
+        position: sticky;
+        top: 0;
+    }
+
+
+    .header-content {
+        min-height: 68px;
+
+        gap: 10px;
+    }
+
+
+    .menu-btn {
+        display: block;
+    }
+
+
+    .logo {
+        gap: 7px;
+    }
+
+
+    .logo-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+
+    .logo-text {
+        font-size: 19px;
+    }
+
+
+    .header-actions {
+        margin-left: auto;
+        gap: 5px;
+    }
+
+
+    .header-icon {
+        width: 32px;
+    }
+
+
+    .account-link {
+        display: none;
+    }
+
+
+    /* SEARCH */
+
+    .search-box {
+        position: absolute;
+
+        left: 4%;
+        right: 4%;
+        top: 77px;
+
+        width: 92%;
+
+        height: 48px;
+    }
+
+
+    .search-box button {
+        padding: 0 19px;
+    }
+
+
+    /* NAV */
+
+    .navigation {
+        display: none;
+    }
+
+
+    /* MAIN */
+
+    main {
+        padding-top: 65px;
+    }
+
+
+    .starter-section {
+        min-height: 480px;
+
+        text-align: center;
+    }
+
+
+    .starter-section h1 {
+        font-size: 43px;
+    }
+
+
+    .starter-section p {
+        font-size: 15px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 35px;
+
+        padding: 55px 0 90px;
+    }
+
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+
+    /* BOTTOM NAV */
+
+    .mobile-bottom-nav {
+        position: fixed;
+
+        left: 0;
+        bottom: 0;
+
+        width: 100%;
+
+        height: 68px;
+
+        background: #ffffff;
+
+        border-top: 1px solid #dfe3eb;
+
+        display: flex;
+
+        justify-content: space-around;
+        align-items: center;
+
+        z-index: 2000;
+    }
+
+
+    .mobile-nav-item {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 4px;
+
+        color: #718096;
+
+        font-size: 11px;
+    }
+
+
+    .mobile-nav-item i {
+        font-size: 18px;
+    }
+
+
+    .mobile-nav-item.active {
+        color: #e44829;
+    }
+
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 420px) {
+
+    .logo-text {
+        font-size: 17px;
+    }
+
+
+    .logo-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+
+    .header-actions {
+        gap: 1px;
+    }
+
+
+    .starter-section h1 {
+        font-size: 37px;
+    }
+
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+}

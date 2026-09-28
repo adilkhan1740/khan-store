@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Analytics - KHAN Store Admin</title>
+
+    <meta
+        name="description"
+        content="KHAN Store Admin Analytics Dashboard"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    >
+
+    <!-- Admin Analytics CSS -->
+    <link
+        rel="stylesheet"
+        href="admin-analytics.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     ADMIN SIDEBAR
+     ===================================================== -->
+
+<aside
+    class="admin-sidebar"
+    id="adminSidebar"
+>
+
+    <div class="admin-logo">
+
+        <div class="admin-logo-icon">
+            <i class="fa-solid fa-bolt"></i>
+        </div>
+
+        <div>
+
+            <strong>
+                KHAN Store
+            </strong>
+
+            <span>
+                Admin Panel
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="admin-nav">
+
+        <a
+            href="admin-dashboard.html"
+            class="admin-nav-link"
+        >
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <span>
+                Dashboard
+            </span>
+
+        </a>
+
+
+        <a
+            href="admin-orders.html"
+            class="admin-nav-link"
+        >
+
+            <i class="fa-solid fa-box"></i>
+
+            <span>
+                Orders
+            </span>
+
+        </a>
+
+
+        <a
+            href="admin-products.html"
+            class="admin-nav-link"
+        >
+
+            <i class="fa-solid fa-cube"></i>
+
+            <span>
+                Products
+            </span>
+
+        </a>
+
+
+        <a
+            href="admin-customers.html"
+            class="admin-nav-link"
+        >
+
+            <i class="fa-solid fa-users"></i>
+
+            <span>
+                Customers
+            </span>
+
+        </a>
+
+
+        <a
+            href="admin-analytics.html"
+            class="admin-nav-link active"
+        >
+
+            <i class="fa-solid fa-chart-pie"></i>
+
+            <span>
+                Analytics
+            </span>
+
+        </a>
+
+    </nav>
+
+
+    <div class="admin-sidebar-bottom">
+
+        <a
+            href="index.html"
+            class="admin-nav-link"
+        >
+
+            <i class="fa-solid fa-store"></i>
+
+            <span>
+                View Store
+            </span>
+
+        </a>
+
+
+        <button
+            type="button"
+            class="admin-logout-btn"
+            id="logoutBtn"
+        >
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>
+                Logout
+            </span>
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- =====================================================
+     MAIN
+     ===================================================== -->
+
+<main class="admin-main">
+
+
+    <!-- HEADER -->
+
+    <header class="admin-header">
+
+        <div class="header-left">
+
+            <button
+                type="button"
+                class="admin-menu-btn"
+                id="adminMenuBtn"
+                aria-label="Open menu"
+            >
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <div>
+
+                <h1>
+                    Analytics
+                </h1>
+
+                <p>
+                    Store performance and sales insights
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="header-right">
+
+            <button
+                type="button"
+                class="header-refresh-btn"
+                id="refreshAnalyticsBtn"
+                title="Refresh Analytics"
+            >
+
+                <i class="fa-solid fa-rotate"></i>
+
+            </button>
+
+
+            <div class="admin-profile">
+
+                <div class="admin-profile-avatar">
+
+                    <i class="fa-solid fa-user-shield"></i>
+
+                </div>
+
+                <div>
+
+                    <strong id="adminName">
+                        KHAN Store Admin
+                    </strong>
+
+                    <span id="adminEmail">
+                        admin@khanstore.com
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =================================================
+         CONTENT
+         ================================================= -->
+
+    <section class="analytics-content">
+
+
+        <!-- =================================================
+             PAGE TITLE
+             ================================================= -->
+
+        <div class="page-heading">
+
+            <div>
+
+                <span class="page-eyebrow">
+                    STORE INSIGHTS
+                </span>
+
+                <h2>
+                    Sales Analytics
+                </h2>
+
+                <p>
+                    Track your store performance,
+                    revenue and customer activity.
+                </p>
+
+            </div>
+
+
+            <div class="date-range">
+
+                <i class="fa-regular fa-calendar"></i>
+
+                <span id="analyticsDate">
+                    Current Overview
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             MAIN STATS
+             ================================================= -->
+
+        <div class="analytics-stats">
+
+
+            <article class="analytics-stat-card">
+
+                <div class="stat-card-top">
+
+                    <div class="stat-icon sales">
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+                    </div>
+
+                    <span class="stat-label">
+                        Total Revenue
+                    </span>
+
+                </div>
+
+
+                <strong
+                    class="stat-value"
+                    id="totalRevenue"
+                >
+                    ₹0
+                </strong>
+
+
+                <div class="stat-bottom">
+
+                    <span
+                        class="stat-change"
+                        id="revenueChange"
+                    >
+                        --
+                    </span>
+
+                    <span>
+                        from all orders
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <article class="analytics-stat-card">
+
+                <div class="stat-card-top">
+
+                    <div class="stat-icon orders">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+
+                    <span class="stat-label">
+                        Total Orders
+                    </span>
+
+                </div>
+
+
+                <strong
+                    class="stat-value"
+                    id="totalOrders"
+                >
+                    0
+                </strong>
+
+
+                <div class="stat-bottom">
+
+                    <span
+                        class="stat-change"
+                        id="ordersChange"
+                    >
+                        --
+                    </span>
+
+                    <span>
+                        orders placed
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <article class="analytics-stat-card">
+
+                <div class="stat-card-top">
+
+                    <div class="stat-icon customers">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <span class="stat-label">
+                        Customers
+                    </span>
+
+                </div>
+
+
+                <strong
+                    class="stat-value"
+                    id="totalCustomers"
+                >
+                    0
+                </strong>
+
+
+                <div class="stat-bottom">
+
+                    <span
+                        class="stat-change"
+                        id="customerChange"
+                    >
+                        --
+                    </span>
+
+                    <span>
+                        registered users
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <article class="analytics-stat-card">
+
+                <div class="stat-card-top">
+
+                    <div class="stat-icon average">
+                        <i class="fa-solid fa-chart-simple"></i>
+                    </div>
+
+                    <span class="stat-label">
+                        Average Order
+                    </span>
+
+                </div>
+
+
+                <strong
+                    class="stat-value"
+                    id="averageOrder"
+                >
+                    ₹0
+                </strong>
+
+
+                <div class="stat-bottom">
+
+                    <span>
+                        per order
+                    </span>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+        <!-- =================================================
+             CHART ROW
+             ================================================= -->
+
+        <div class="analytics-grid">
+
+
+            <!-- SALES CHART -->
+
+            <section class="analytics-card large-card">
+
+                <div class="analytics-card-header">
+
+                    <div>
+
+                        <h3>
+                            Revenue Overview
+                        </h3>
+
+                        <p>
+                            Order revenue over time
+                        </p>
+
+                    </div>
+
+
+                    <select
+                        id="salesPeriod"
+                        class="analytics-select"
+                    >
+
+                        <option value="7">
+                            Last 7 Days
+                        </option>
+
+                        <option
+                            value="30"
+                            selected
+                        >
+                            Last 30 Days
+                        </option>
+
+                        <option value="90">
+                            Last 90 Days
+                        </option>
+
+                        <option value="365">
+                            Last 12 Months
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="chart-container">
+
+                    <canvas
+                        id="salesChart"
+                    ></canvas>
+
+                </div>
+
+            </section>
+
+
+            <!-- ORDER STATUS -->
+
+            <section class="analytics-card">
+
+                <div class="analytics-card-header">
+
+                    <div>
+
+                        <h3>
+                            Order Status
+                        </h3>
+
+                        <p>
+                            Current order distribution
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="status-chart-wrapper">
+
+                    <canvas
+                        id="orderStatusChart"
+                    ></canvas>
+
+                    <div class="status-chart-center">
+
+                        <strong id="statusTotal">
+                            0
+                        </strong>
+
+                        <span>
+                            Orders
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="status-legend"
+                    id="statusLegend"
+                ></div>
+
+            </section>
+
+
+        </div>
+
+
+        <!-- =================================================
+             SECOND ROW
+             ================================================= -->
+
+        <div class="analytics-grid second-row">
+
+
+            <!-- TOP PRODUCTS -->
+
+            <section class="analytics-card">
+
+                <div class="analytics-card-header">
+
+                    <div>
+
+                        <h3>
+                            Top Products
+                        </h3>
+
+                        <p>
+                            Products generating the most sales
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="top-products"
+                    id="topProducts"
+                ></div>
+
+            </section>
+
+
+            <!-- PAYMENT METHODS -->
+
+            <section class="analytics-card">
+
+                <div class="analytics-card-header">
+
+                    <div>
+
+                        <h3>
+                            Payment Methods
+                        </h3>
+
+                        <p>
+                            Orders by payment method
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="payment-methods"
+                    id="paymentMethods"
+                ></div>
+
+            </section>
+
+
+        </div>
+
+
+        <!-- =================================================
+             RECENT SALES
+             ================================================= -->
+
+        <section class="analytics-card recent-sales-card">
+
+            <div class="analytics-card-header">
+
+                <div>
+
+                    <h3>
+                        Recent Sales
+                    </h3>
+
+                    <p>
+                        Latest orders from your store
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="admin-orders.html"
+                    class="view-all-link"
+                >
+
+                    View All
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table class="analytics-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Order
+                            </th>
+
+                            <th>
+                                Customer
+                            </th>
+
+                            <th>
+                                Date
+                            </th>
+
+                            <th>
+                                Payment
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Amount
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody
+                        id="recentSalesBody"
+                    ></tbody>
+
+                </table>
+
+            </div>
+
+
+            <div
+                class="analytics-empty"
+                id="recentSalesEmpty"
+                hidden
+            >
+
+                <i class="fa-solid fa-chart-column"></i>
+
+                <h3>
+                    No sales data
+                </h3>
+
+                <p>
+                    Orders will appear here when customers place them.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     TOAST
+     ===================================================== -->
+
+<div
+    class="admin-toast"
+    id="adminToast"
+>
+
+    <div class="toast-icon">
+
+        <i class="fa-solid fa-check"></i>
+
+    </div>
+
+
+    <div class="toast-content">
+
+        <strong id="adminToastTitle">
+            Success
+        </strong>
+
+        <span id="adminToastText">
+            Analytics refreshed
+        </span>
+
+    </div>
+
+
+    <button
+        type="button"
+        id="closeToast"
+        aria-label="Close notification"
+    >
+
+        <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+</div>
+
+
+<!-- Chart.js -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/chart.js"
+></script>
+
+
+<!-- Analytics JS -->
+
+<script
+    src="admin-analytics.js"
+></script>
+
+
+</body>
+
+</html>

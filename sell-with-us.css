@@ -1,0 +1,1931 @@
+/* =========================================================
+   KHAN STORE — SELL WITH US
+   Professional Responsive CSS
+   ========================================================= */
+
+
+/* =========================
+   RESET
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: #f7f8fa;
+    color: #17191d;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Inter", sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+    font-size: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+::selection {
+    background: #111827;
+    color: #ffffff;
+}
+
+
+/* =========================
+   COMMON
+   ========================= */
+
+.sell-container {
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+.sell-header,
+.sell-hero,
+.sell-benefits,
+.sell-how,
+.seller-form-section,
+.seller-faq,
+.seller-cta,
+.sell-footer {
+    position: relative;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.sell-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid #e7e9ed;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.sell-header-inner {
+    width: min(1240px, calc(100% - 40px));
+    min-height: 76px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+
+/* Logo */
+
+.sell-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.sell-logo-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #111827;
+    color: #ffffff;
+    font-size: 18px;
+    box-shadow: 0 8px 22px rgba(17, 24, 39, 0.16);
+}
+
+.sell-logo-text {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: -0.6px;
+}
+
+.sell-logo-text strong {
+    font-weight: 500;
+}
+
+
+/* Desktop Navigation */
+
+.sell-desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.sell-desktop-nav > a {
+    min-height: 42px;
+    padding: 0 13px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #5d6470;
+    font-size: 13px;
+    font-weight: 700;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.sell-desktop-nav > a i {
+    font-size: 13px;
+}
+
+.sell-desktop-nav > a:hover {
+    color: #111827;
+    background: #f1f3f6;
+    transform: translateY(-1px);
+}
+
+.sell-desktop-nav > a.active {
+    color: #111827;
+    background: #eef0f3;
+}
+
+
+/* Cart */
+
+.sell-cart-link {
+    position: relative;
+}
+
+.sell-cart-count {
+    min-width: 19px;
+    height: 19px;
+    padding: 0 5px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #111827;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+
+/* Mobile Menu */
+
+.sell-mobile-menu-btn {
+    width: 44px;
+    height: 44px;
+    border: 1px solid #e2e5e9;
+    border-radius: 12px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    color: #111827;
+    font-size: 18px;
+}
+
+.sell-mobile-menu-btn:hover {
+    background: #f3f4f6;
+}
+
+.sell-mobile-nav {
+    display: none;
+}
+
+
+/* =========================
+   HERO
+   ========================= */
+
+.sell-hero {
+    padding: 95px 0 100px;
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(17, 24, 39, 0.06),
+            transparent 30%
+        ),
+        linear-gradient(180deg, #ffffff 0%, #f7f8fa 100%);
+    overflow: hidden;
+}
+
+.sell-hero::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    right: -180px;
+    top: -170px;
+    background: rgba(17, 24, 39, 0.035);
+    pointer-events: none;
+}
+
+.sell-hero .sell-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(380px, 0.95fr);
+    align-items: center;
+    gap: 75px;
+}
+
+.sell-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.sell-badge {
+    width: fit-content;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 13px;
+    border: 1px solid #dfe3e8;
+    border-radius: 999px;
+    background: #ffffff;
+    color: #555d68;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.9px;
+}
+
+.sell-badge i {
+    color: #111827;
+}
+
+
+.sell-hero h1 {
+    max-width: 700px;
+    margin-top: 22px;
+    font-size: clamp(42px, 5vw, 68px);
+    line-height: 1.03;
+    letter-spacing: -3px;
+    font-weight: 900;
+    color: #111318;
+}
+
+.sell-hero h1 span {
+    display: block;
+    color: #59616d;
+}
+
+.sell-hero-content > p {
+    max-width: 650px;
+    margin-top: 24px;
+    color: #68717d;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+.sell-hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 32px;
+}
+
+.sell-btn {
+    min-height: 50px;
+    padding: 0 20px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    border: 1px solid transparent;
+    font-size: 13px;
+    font-weight: 800;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.sell-btn:hover {
+    transform: translateY(-2px);
+}
+
+.sell-btn-primary {
+    background: #111827;
+    color: #ffffff;
+    box-shadow: 0 12px 28px rgba(17, 24, 39, 0.16);
+}
+
+.sell-btn-primary:hover {
+    background: #252c38;
+    box-shadow: 0 16px 34px rgba(17, 24, 39, 0.2);
+}
+
+.sell-btn-secondary {
+    border-color: #dfe3e8;
+    background: #ffffff;
+    color: #222832;
+}
+
+.sell-btn-secondary:hover {
+    border-color: #c8cdd4;
+    background: #f7f8fa;
+}
+
+
+.sell-hero-points {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.sell-hero-points > div {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #626a75;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.sell-hero-points i {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #e8eaed;
+    color: #111827;
+    font-size: 9px;
+}
+
+
+/* Hero Dashboard */
+
+.sell-hero-visual {
+    position: relative;
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seller-dashboard-card {
+    width: min(100%, 450px);
+    padding: 27px;
+    border: 1px solid #e0e4e8;
+    border-radius: 25px;
+    background: #ffffff;
+    box-shadow:
+        0 30px 70px rgba(17, 24, 39, 0.11),
+        0 8px 25px rgba(17, 24, 39, 0.05);
+    transform: rotate(1.2deg);
+    transition: transform 0.3s ease;
+}
+
+.seller-dashboard-card:hover {
+    transform: rotate(0deg) translateY(-5px);
+}
+
+.dashboard-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.dashboard-label {
+    display: block;
+    margin-bottom: 4px;
+    color: #8a919b;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.dashboard-top h3 {
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 900;
+    letter-spacing: -0.8px;
+}
+
+.dashboard-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111827;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 28px;
+}
+
+.dashboard-stat {
+    min-height: 110px;
+    padding: 17px 14px;
+    border: 1px solid #eaecf0;
+    border-radius: 15px;
+    background: #fafbfc;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dashboard-stat span {
+    color: #7a828c;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.dashboard-stat strong {
+    width: 37px;
+    height: 37px;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eef0f3;
+    color: #202630;
+    font-size: 14px;
+}
+
+.dashboard-progress {
+    margin-top: 25px;
+    padding: 17px;
+    border-radius: 15px;
+    background: #f5f6f8;
+}
+
+.progress-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 11px;
+}
+
+.progress-heading span {
+    color: #737b86;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.progress-heading strong {
+    color: #111827;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.progress-line {
+    width: 100%;
+    height: 8px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #dfe2e6;
+}
+
+.progress-line span {
+    display: block;
+    width: 78%;
+    height: 100%;
+    border-radius: inherit;
+    background: #111827;
+}
+
+.dashboard-footer {
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid #eceef1;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #6f7782;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.dashboard-footer i {
+    color: #111827;
+}
+
+
+/* =========================
+   SECTION HEADING
+   ========================= */
+
+.sell-section-heading {
+    max-width: 700px;
+    margin: 0 auto 52px;
+    text-align: center;
+}
+
+.sell-section-heading > span {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #727a85;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.sell-section-heading h2 {
+    color: #111318;
+    font-size: clamp(30px, 4vw, 45px);
+    line-height: 1.15;
+    letter-spacing: -1.7px;
+    font-weight: 900;
+}
+
+.sell-section-heading h2 strong {
+    display: block;
+    font-weight: 900;
+    color: #59616d;
+}
+
+.sell-section-heading p {
+    max-width: 600px;
+    margin: 16px auto 0;
+    color: #727a85;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   BENEFITS
+   ========================= */
+
+.sell-benefits {
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.benefit-card {
+    padding: 28px 23px;
+    border: 1px solid #e7e9ed;
+    border-radius: 18px;
+    background: #ffffff;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-6px);
+    border-color: #d7dbe0;
+    box-shadow: 0 18px 38px rgba(17, 24, 39, 0.07);
+}
+
+.benefit-icon {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 22px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f2f4;
+    color: #111827;
+    font-size: 19px;
+}
+
+.benefit-card h3 {
+    font-size: 17px;
+    line-height: 1.3;
+    font-weight: 800;
+    letter-spacing: -0.4px;
+}
+
+.benefit-card p {
+    margin-top: 10px;
+    color: #737b86;
+    font-size: 12px;
+    line-height: 1.75;
+}
+
+
+/* =========================
+   HOW IT WORKS
+   ========================= */
+
+.sell-how {
+    padding: 100px 0;
+    background: #f7f8fa;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+    align-items: center;
+    gap: 14px;
+}
+
+.sell-step {
+    min-height: 270px;
+    padding: 28px 22px;
+    position: relative;
+    border: 1px solid #e2e5e9;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 8px 25px rgba(17, 24, 39, 0.035);
+}
+
+.step-number {
+    position: absolute;
+    top: 17px;
+    right: 19px;
+    color: #c4c9cf;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.step-icon {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 23px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111827;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.sell-step h3 {
+    font-size: 17px;
+    font-weight: 850;
+}
+
+.sell-step p {
+    margin-top: 10px;
+    color: #747c86;
+    font-size: 12px;
+    line-height: 1.75;
+}
+
+.step-arrow {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9299a2;
+    font-size: 14px;
+}
+
+
+/* =========================
+   SELLER FORM SECTION
+   ========================= */
+
+.seller-form-section {
+    padding: 110px 0;
+    background: #ffffff;
+}
+
+.seller-form-layout {
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    gap: 70px;
+    align-items: start;
+}
+
+
+/* Form Intro */
+
+.seller-form-info {
+    position: sticky;
+    top: 105px;
+}
+
+.seller-form-info h2 {
+    max-width: 470px;
+    margin-top: 22px;
+    color: #111318;
+    font-size: clamp(34px, 4vw, 48px);
+    line-height: 1.08;
+    letter-spacing: -2px;
+    font-weight: 900;
+}
+
+.seller-form-info h2 span {
+    display: block;
+    color: #59616d;
+}
+
+.seller-form-info > p {
+    max-width: 500px;
+    margin-top: 18px;
+    color: #737b86;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+.seller-info-list {
+    margin-top: 35px;
+    display: grid;
+    gap: 22px;
+}
+
+.seller-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.seller-info-icon {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f2f4;
+    color: #111827;
+    font-size: 12px;
+}
+
+.seller-info-item strong {
+    display: block;
+    color: #252a32;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.seller-info-item span {
+    display: block;
+    margin-top: 3px;
+    color: #7b838e;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+/* Form Card */
+
+.seller-form-card {
+    padding: 35px;
+    border: 1px solid #e1e4e8;
+    border-radius: 24px;
+    background: #ffffff;
+    box-shadow:
+        0 25px 60px rgba(17, 24, 39, 0.08),
+        0 4px 16px rgba(17, 24, 39, 0.03);
+}
+
+.form-heading {
+    padding-bottom: 24px;
+    margin-bottom: 26px;
+    border-bottom: 1px solid #eceef1;
+}
+
+.form-heading h3 {
+    color: #171a20;
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: -0.7px;
+}
+
+.form-heading p {
+    margin-top: 5px;
+    color: #858c95;
+    font-size: 11px;
+}
+
+
+/* Form Fields */
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 17px;
+}
+
+.form-group {
+    margin-bottom: 19px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #303640;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.form-group label > span {
+    color: #111827;
+}
+
+.form-group label small {
+    color: #8a919a;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+
+.input-wrap {
+    position: relative;
+}
+
+.input-wrap > i {
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    z-index: 1;
+    transform: translateY(-50%);
+    color: #8a919a;
+    font-size: 13px;
+    pointer-events: none;
+}
+
+.input-wrap input,
+.input-wrap select,
+.form-group textarea {
+    width: 100%;
+    border: 1px solid #dfe3e7;
+    border-radius: 11px;
+    outline: none;
+    background: #ffffff;
+    color: #242932;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.input-wrap input,
+.input-wrap select {
+    height: 48px;
+    padding: 0 14px 0 39px;
+}
+
+.input-wrap select {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.select-wrap::after {
+    content: "\f078";
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    transform: translateY(-50%);
+    color: #8b929b;
+    font-family: "Font Awesome 7 Free";
+    font-weight: 900;
+    font-size: 10px;
+    pointer-events: none;
+}
+
+.form-group textarea {
+    min-height: 130px;
+    padding: 14px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.input-wrap input::placeholder,
+.form-group textarea::placeholder {
+    color: #a0a6ae;
+}
+
+.input-wrap input:focus,
+.input-wrap select:focus,
+.form-group textarea:focus {
+    border-color: #111827;
+    box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.07);
+}
+
+.form-group.has-error input,
+.form-group.has-error select,
+.form-group.has-error textarea {
+    border-color: #a33b3b;
+    background: #fffafa;
+}
+
+.form-group.is-valid input,
+.form-group.is-valid select,
+.form-group.is-valid textarea {
+    border-color: #aeb4bb;
+}
+
+
+/* Error */
+
+.form-error {
+    min-height: 16px;
+    display: block;
+    margin-top: 5px;
+    color: #a33b3b;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.textarea-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.textarea-footer .form-error {
+    flex: 1;
+}
+
+#sellerMessageCount {
+    flex-shrink: 0;
+    padding-top: 5px;
+    color: #9299a2;
+    font-size: 10px;
+}
+
+
+/* Consent */
+
+.seller-consent {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    color: #686f79;
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+.seller-consent input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.custom-checkbox {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    border: 1px solid #d4d8dd;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    color: #ffffff;
+    font-size: 9px;
+    transition: 0.2s ease;
+}
+
+.seller-consent input:checked + .custom-checkbox {
+    border-color: #111827;
+    background: #111827;
+}
+
+.seller-consent input:focus-visible + .custom-checkbox {
+    box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.08);
+}
+
+.consent-error {
+    margin-left: 28px;
+}
+
+
+/* Submit */
+
+.seller-submit-btn {
+    width: 100%;
+    min-height: 53px;
+    margin-top: 18px;
+    padding: 0 18px;
+    border: 0;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    background: #111827;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+    box-shadow: 0 12px 25px rgba(17, 24, 39, 0.13);
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.seller-submit-btn:hover {
+    background: #252c38;
+    transform: translateY(-2px);
+    box-shadow: 0 16px 30px rgba(17, 24, 39, 0.18);
+}
+
+.seller-submit-btn:disabled {
+    opacity: 0.7;
+    cursor: wait;
+    transform: none;
+}
+
+.submit-loading {
+    display: none;
+}
+
+.seller-submit-btn.loading .submit-text,
+.seller-submit-btn.loading .submit-arrow {
+    display: none;
+}
+
+.seller-submit-btn.loading .submit-loading {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.seller-form-security {
+    margin-top: 17px;
+    padding-top: 17px;
+    border-top: 1px solid #eceef1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+    color: #8a919a;
+    font-size: 10px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.seller-form-security i {
+    color: #69717c;
+    margin-top: 1px;
+}
+
+
+/* =========================
+   SELLER FAQ
+   ========================= */
+
+.seller-faq {
+    padding: 100px 0;
+    background: #f7f8fa;
+}
+
+.seller-faq-list {
+    max-width: 850px;
+    margin: 0 auto;
+    display: grid;
+    gap: 11px;
+}
+
+.seller-faq-item {
+    border: 1px solid #e2e5e9;
+    border-radius: 14px;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.seller-faq-item summary {
+    min-height: 65px;
+    padding: 0 21px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    cursor: pointer;
+    color: #252a32;
+    font-size: 13px;
+    font-weight: 800;
+    list-style: none;
+}
+
+.seller-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.seller-faq-item summary i {
+    width: 25px;
+    height: 25px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f2f4;
+    color: #5e6670;
+    font-size: 9px;
+    transition: transform 0.2s ease;
+}
+
+.seller-faq-item[open] summary i {
+    transform: rotate(45deg);
+}
+
+.seller-faq-answer {
+    padding: 0 21px 20px;
+    color: #737b86;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.seller-faq-answer p {
+    max-width: 700px;
+}
+
+.seller-faq-answer a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 13px;
+    color: #111827;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.seller-faq-answer a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   CTA
+   ========================= */
+
+.seller-cta {
+    padding: 75px 0;
+    background: #ffffff;
+}
+
+.seller-cta-box {
+    min-height: 200px;
+    padding: 35px 40px;
+    border-radius: 23px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 28px;
+    background: #111827;
+    color: #ffffff;
+    box-shadow: 0 25px 55px rgba(17, 24, 39, 0.15);
+}
+
+.seller-cta-icon {
+    width: 66px;
+    height: 66px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    font-size: 24px;
+}
+
+.seller-cta-content > span {
+    color: #aeb5bf;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.seller-cta-content h2 {
+    margin-top: 5px;
+    font-size: clamp(25px, 3vw, 36px);
+    line-height: 1.15;
+    letter-spacing: -1.2px;
+    font-weight: 900;
+}
+
+.seller-cta-content h2 strong {
+    color: #bfc5cc;
+}
+
+.seller-cta-content p {
+    margin-top: 8px;
+    color: #aeb5bf;
+    font-size: 12px;
+}
+
+.seller-cta .sell-btn-primary {
+    background: #ffffff;
+    color: #111827;
+    box-shadow: none;
+}
+
+.seller-cta .sell-btn-primary:hover {
+    background: #f1f3f5;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.sell-footer {
+    padding: 75px 0 0;
+    background: #101318;
+    color: #ffffff;
+}
+
+.sell-footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr repeat(3, 1fr);
+    gap: 50px;
+    padding-bottom: 55px;
+}
+
+.sell-footer-brand {
+    max-width: 320px;
+}
+
+.sell-footer .sell-logo-text {
+    color: #ffffff;
+}
+
+.sell-footer .sell-logo-text strong {
+    color: #b7bec7;
+}
+
+.sell-footer-brand > p {
+    margin-top: 18px;
+    color: #8e96a0;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.sell-socials {
+    margin-top: 22px;
+    display: flex;
+    gap: 8px;
+}
+
+.sell-socials a {
+    width: 34px;
+    height: 34px;
+    border: 1px solid #2b3038;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aab1ba;
+    font-size: 12px;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.sell-socials a:hover {
+    border-color: #555d67;
+    background: #1b2027;
+    color: #ffffff;
+}
+
+
+.sell-footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sell-footer-column h3 {
+    margin-bottom: 17px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.sell-footer-column a {
+    margin-bottom: 10px;
+    color: #8e96a0;
+    font-size: 11px;
+    transition: color 0.2s ease;
+}
+
+.sell-footer-column a:hover {
+    color: #ffffff;
+}
+
+
+.sell-footer-bottom {
+    min-height: 67px;
+    border-top: 1px solid #262b32;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.sell-footer-bottom p {
+    color: #777f89;
+    font-size: 10px;
+}
+
+.footer-bottom-links {
+    display: flex;
+    gap: 18px;
+}
+
+.footer-bottom-links a {
+    color: #777f89;
+    font-size: 10px;
+}
+
+.footer-bottom-links a:hover {
+    color: #ffffff;
+}
+
+
+/* =========================
+   TOAST
+   ========================= */
+
+.sell-toast {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 3000;
+    width: min(390px, calc(100% - 30px));
+    padding: 14px;
+    border: 1px solid #e0e4e8;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    background: #ffffff;
+    box-shadow: 0 18px 45px rgba(17, 24, 39, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease,
+        transform 0.25s ease;
+}
+
+.sell-toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.sell-toast-icon {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111827;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.sell-toast-content {
+    min-width: 0;
+    flex: 1;
+}
+
+.sell-toast-content strong {
+    display: block;
+    color: #252a32;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.sell-toast-content span {
+    display: block;
+    margin-top: 2px;
+    color: #777f89;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+#sellToastClose {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: #858c95;
+}
+
+#sellToastClose:hover {
+    background: #f0f2f4;
+    color: #111827;
+}
+
+
+/* =========================
+   FOCUS
+   ========================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+    outline: 3px solid rgba(17, 24, 39, 0.18);
+    outline-offset: 3px;
+}
+
+
+/* =========================
+   RESPONSIVE — 1100px
+   ========================= */
+
+@media (max-width: 1100px) {
+
+    .sell-header-inner {
+        width: min(100% - 30px, 1180px);
+    }
+
+    .sell-desktop-nav > a {
+        padding: 0 8px;
+        font-size: 12px;
+    }
+
+    .sell-desktop-nav > a i {
+        display: none;
+    }
+
+    .sell-hero .sell-container {
+        gap: 45px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .step-arrow {
+        display: none;
+    }
+
+    .seller-form-layout {
+        gap: 45px;
+    }
+
+    .sell-footer-grid {
+        gap: 30px;
+    }
+}
+
+
+/* =========================
+   RESPONSIVE — 900px
+   ========================= */
+
+@media (max-width: 900px) {
+
+    .sell-desktop-nav {
+        display: none;
+    }
+
+    .sell-mobile-menu-btn {
+        display: flex;
+    }
+
+    .sell-mobile-nav {
+        width: 100%;
+        padding: 0 20px;
+        border-top: 1px solid transparent;
+        background: #ffffff;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition:
+            max-height 0.3s ease,
+            opacity 0.2s ease,
+            padding 0.3s ease,
+            border-color 0.3s ease;
+    }
+
+    .sell-mobile-nav.active {
+        max-height: 500px;
+        padding-top: 10px;
+        padding-bottom: 15px;
+        border-color: #e7e9ed;
+        opacity: 1;
+    }
+
+    .sell-mobile-nav > a {
+        min-height: 45px;
+        padding: 0 13px;
+        margin-bottom: 4px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #606873;
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+    .sell-mobile-nav > a i {
+        width: 18px;
+        text-align: center;
+    }
+
+    .sell-mobile-nav > a:hover,
+    .sell-mobile-nav > a.active {
+        background: #f0f2f4;
+        color: #111827;
+    }
+
+    .sell-hero {
+        padding: 75px 0 80px;
+    }
+
+    .sell-hero .sell-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .sell-hero-content {
+        text-align: center;
+    }
+
+    .sell-badge {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .sell-hero h1 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .sell-hero-content > p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .sell-hero-actions,
+    .sell-hero-points {
+        justify-content: center;
+    }
+
+    .sell-hero-visual {
+        min-height: auto;
+    }
+
+    .seller-form-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .seller-form-info {
+        position: static;
+    }
+
+    .seller-form-info h2,
+    .seller-form-info > p {
+        max-width: 700px;
+    }
+
+    .seller-info-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .seller-cta-box {
+        grid-template-columns: auto 1fr;
+    }
+
+    .seller-cta-box .sell-btn {
+        grid-column: 1 / -1;
+        width: fit-content;
+    }
+
+    .sell-footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sell-footer-brand {
+        grid-column: 1 / -1;
+        max-width: 500px;
+    }
+}
+
+
+/* =========================
+   RESPONSIVE — 700px
+   ========================= */
+
+@media (max-width: 700px) {
+
+    .sell-container {
+        width: min(100% - 28px, 600px);
+    }
+
+    .sell-header-inner {
+        min-height: 68px;
+        width: calc(100% - 28px);
+    }
+
+    .sell-logo-icon {
+        width: 37px;
+        height: 37px;
+        border-radius: 10px;
+    }
+
+    .sell-logo-text {
+        font-size: 18px;
+    }
+
+    .sell-hero {
+        padding: 60px 0 65px;
+    }
+
+    .sell-hero h1 {
+        font-size: clamp(36px, 10vw, 52px);
+        letter-spacing: -2px;
+    }
+
+    .sell-hero-content > p {
+        font-size: 13px;
+    }
+
+    .sell-hero-points {
+        display: grid;
+        justify-content: center;
+        gap: 9px;
+    }
+
+    .seller-dashboard-card {
+        padding: 22px;
+        transform: none;
+    }
+
+    .dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-stat {
+        min-height: 70px;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .sell-benefits,
+    .sell-how,
+    .seller-form-section,
+    .seller-faq {
+        padding: 75px 0;
+    }
+
+    .sell-section-heading {
+        margin-bottom: 35px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sell-step {
+        min-height: auto;
+    }
+
+    .seller-info-list {
+        grid-template-columns: 1fr;
+    }
+
+    .seller-form-card {
+        padding: 23px 18px;
+        border-radius: 18px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .seller-cta {
+        padding: 55px 0;
+    }
+
+    .seller-cta-box {
+        grid-template-columns: 1fr;
+        padding: 30px 24px;
+        text-align: center;
+        justify-items: center;
+    }
+
+    .seller-cta-box .sell-btn {
+        grid-column: auto;
+        width: 100%;
+    }
+
+    .sell-footer {
+        padding-top: 55px;
+    }
+
+    .sell-footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 25px;
+        padding-bottom: 40px;
+    }
+
+    .sell-footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .sell-footer-bottom {
+        padding: 18px 0;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+
+/* =========================
+   RESPONSIVE — 480px
+   ========================= */
+
+@media (max-width: 480px) {
+
+    .sell-container {
+        width: calc(100% - 24px);
+    }
+
+    .sell-header-inner {
+        width: calc(100% - 24px);
+    }
+
+    .sell-logo-text {
+        font-size: 17px;
+    }
+
+    .sell-mobile-menu-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .sell-hero {
+        padding: 48px 0 55px;
+    }
+
+    .sell-hero h1 {
+        font-size: 35px;
+        letter-spacing: -1.7px;
+    }
+
+    .sell-hero-actions {
+        flex-direction: column;
+    }
+
+    .sell-hero-actions .sell-btn {
+        width: 100%;
+    }
+
+    .sell-hero-points {
+        font-size: 11px;
+    }
+
+    .seller-dashboard-card {
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .dashboard-top h3 {
+        font-size: 20px;
+    }
+
+    .dashboard-icon {
+        width: 45px;
+        height: 45px;
+        border-radius: 13px;
+    }
+
+    .sell-section-heading h2 {
+        font-size: 29px;
+        letter-spacing: -1px;
+    }
+
+    .sell-section-heading p {
+        font-size: 12px;
+    }
+
+    .benefit-card {
+        padding: 23px 19px;
+    }
+
+    .seller-form-info h2 {
+        font-size: 33px;
+    }
+
+    .seller-form-card {
+        padding: 20px 15px;
+    }
+
+    .form-heading h3 {
+        font-size: 19px;
+    }
+
+    .seller-cta-content h2 {
+        font-size: 27px;
+    }
+
+    .sell-footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sell-footer-brand {
+        grid-column: auto;
+    }
+
+    .footer-bottom-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sell-toast {
+        right: 12px;
+        bottom: 12px;
+        width: calc(100% - 24px);
+    }
+}
+
+
+/* =========================
+   REDUCED MOTION
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}

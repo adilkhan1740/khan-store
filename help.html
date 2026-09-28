@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="KHAN Store Help Center - Find answers, get support and resolve your shopping questions."
+    >
+
+    <title>Help Center — KHAN Store</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    >
+
+    <!-- Help CSS -->
+    <link rel="stylesheet" href="help.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="help-header">
+
+        <div class="help-header-inner">
+
+            <a
+                href="index.html"
+                class="help-logo"
+                aria-label="KHAN Store Home"
+            >
+                <span class="logo-icon">
+                    <i class="fa-solid fa-bolt"></i>
+                </span>
+
+                <span class="logo-text">
+                    KHAN <strong>Store</strong>
+                </span>
+            </a>
+
+
+            <!-- Desktop Navigation -->
+
+            <nav
+                class="help-desktop-nav"
+                aria-label="Main Navigation"
+            >
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="products.html">
+                    Products
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a
+                    href="help.html"
+                    class="active"
+                >
+                    Help
+                </a>
+
+                <a href="cart.html" class="nav-cart-link">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Cart
+
+                    <span
+                        id="cartCount"
+                        class="nav-cart-count"
+                    >
+                        0
+                    </span>
+                </a>
+
+            </nav>
+
+
+            <!-- Mobile Menu Button -->
+
+            <button
+                type="button"
+                id="mobileMenuBtn"
+                class="mobile-menu-btn"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+
+        <!-- Mobile Navigation -->
+
+        <nav
+            id="mobileNav"
+            class="help-mobile-nav"
+            aria-label="Mobile Navigation"
+        >
+
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                Home
+            </a>
+
+            <a href="products.html">
+                <i class="fa-solid fa-box"></i>
+                Products
+            </a>
+
+            <a href="about.html">
+                <i class="fa-solid fa-circle-info"></i>
+                About
+            </a>
+
+            <a href="contact.html">
+                <i class="fa-solid fa-envelope"></i>
+                Contact
+            </a>
+
+            <a
+                href="help.html"
+                class="active"
+            >
+                <i class="fa-solid fa-circle-question"></i>
+                Help Center
+            </a>
+
+            <a href="cart.html">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Cart
+
+                <span
+                    id="mobileCartCount"
+                    class="mobile-cart-count"
+                >
+                    0
+                </span>
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <main>
+
+        <section class="help-hero">
+
+            <div class="help-container">
+
+                <div class="help-hero-content">
+
+                    <div class="help-badge">
+                        <i class="fa-solid fa-headset"></i>
+                        KHAN Store Support
+                    </div>
+
+                    <h1>
+                        How Can We
+                        <span>Help You?</span>
+                    </h1>
+
+                    <p>
+                        Find quick answers to your questions
+                        about orders, payments, delivery,
+                        returns and your KHAN Store account.
+                    </p>
+
+
+                    <!-- Search -->
+
+                    <div class="help-search-wrapper">
+
+                        <form
+                            id="helpSearchForm"
+                            class="help-search-form"
+                        >
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input
+                                type="search"
+                                id="helpSearchInput"
+                                placeholder="Search for help..."
+                                autocomplete="off"
+                            >
+
+                            <button
+                                type="submit"
+                                aria-label="Search help"
+                            >
+                                Search
+                            </button>
+
+                        </form>
+
+                        <div
+                            id="searchSuggestions"
+                            class="search-suggestions"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             QUICK HELP CATEGORIES
+        ========================== -->
+
+        <section class="help-categories">
+
+            <div class="help-container">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        <i class="fa-solid fa-life-ring"></i>
+                        Quick Help
+                    </span>
+
+                    <h2>
+                        What Do You Need Help With?
+                    </h2>
+
+                    <p>
+                        Choose a category to quickly find
+                        the information you need.
+                    </p>
+
+                </div>
+
+
+                <div class="help-category-grid">
+
+                    <button
+                        type="button"
+                        class="help-category-card"
+                        data-category="orders"
+                    >
+                        <span class="category-icon">
+                            <i class="fa-solid fa-box-open"></i>
+                        </span>
+
+                        <span class="category-content">
+                            <strong>Orders</strong>
+                            <small>
+                                Order status, cancellation
+                                and order details
+                            </small>
+                        </span>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="help-category-card"
+                        data-category="delivery"
+                    >
+                        <span class="category-icon">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </span>
+
+                        <span class="category-content">
+                            <strong>Delivery</strong>
+                            <small>
+                                Shipping, delivery time
+                                and tracking
+                            </small>
+                        </span>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="help-category-card"
+                        data-category="payments"
+                    >
+                        <span class="category-icon">
+                            <i class="fa-solid fa-credit-card"></i>
+                        </span>
+
+                        <span class="category-content">
+                            <strong>Payments</strong>
+                            <small>
+                                Payment methods and
+                                payment issues
+                            </small>
+                        </span>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="help-category-card"
+                        data-category="returns"
+                    >
+                        <span class="category-icon">
+                            <i class="fa-solid fa-rotate-left"></i>
+                        </span>
+
+                        <span class="category-content">
+                            <strong>Returns & Refunds</strong>
+                            <small>
+                                Returns, refunds and
+                                replacement information
+                            </small>
+                        </span>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="help-category-card"
+                        data-category="account"
+                    >
+                        <span class="category-icon">
+                            <i class="fa-solid fa-user"></i>
+                        </span>
+
+                        <span class="category-content">
+                            <strong>Account</strong>
+                            <small>
+                                Login, signup and
+                                account-related help
+                            </small>
+                        </span>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="help-category-card"
+                        data-category="products"
+                    >
+                        <span class="category-icon">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                        </span>
+
+                        <span class="category-content">
+                            <strong>Products</strong>
+                            <small>
+                                Product information,
+                                availability and warranty
+                            </small>
+                        </span>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FAQ
+        ========================== -->
+
+        <section
+            class="faq-section"
+            id="faq"
+        >
+
+            <div class="help-container">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        <i class="fa-solid fa-circle-question"></i>
+                        Frequently Asked Questions
+                    </span>
+
+                    <h2>
+                        Common Questions
+                    </h2>
+
+                    <p>
+                        Here are answers to some of the
+                        most common questions from our customers.
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="faqList"
+                    class="faq-list"
+                >
+
+                    <!-- Orders -->
+
+                    <article
+                        class="faq-item"
+                        data-category="orders"
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-question"
+                            aria-expanded="false"
+                        >
+                            <span>
+                                How can I check my order status?
+                            </span>
+
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                You can check your order status
+                                from the My Orders section. You
+                                can also use the Track Order page
+                                with your order ID.
+                            </p>
+
+                            <a href="track-order.html">
+                                Track Your Order
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Orders -->
+
+                    <article
+                        class="faq-item"
+                        data-category="orders"
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-question"
+                            aria-expanded="false"
+                        >
+                            <span>
+                                Can I cancel an order?
+                            </span>
+
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Order cancellation depends on
+                                the current order status. Check
+                                your order details for the
+                                available options.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Delivery -->
+
+                    <article
+                        class="faq-item"
+                        data-category="delivery"
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-question"
+                            aria-expanded="false"
+                        >
+                            <span>
+                                How long does delivery take?
+                            </span>
+
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Delivery time can vary depending
+                                on your location, product
+                                availability and selected
+                                delivery method.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Delivery -->
+
+                    <article
+                        class="faq-item"
+                        data-category="delivery"
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-question"
+                            aria-expanded="false"
+                        >
+                            <span>
+                                How can I track my delivery?
+                            </span>
+
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Open the Track Order page and
+                                enter your order ID to view the
+                                latest order information.
+                            </p>
+
+                            <a href="track-order.html">
+                                Track Order
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Payments -->
+
+                    <article
+                        class="faq-item"
+                        data-category="payments"
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-question"
+                            aria-expanded="false"
+                        >
+                            <span>
+                                Which payment methods are available?
+                            </span>
+
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Available payment methods are
+                                shown during checkout. The options
+                                may include Cash on Delivery and
+                                online payment.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Returns -->
+
+                    <article
+                        class="faq-item"
+                        data-category="returns"
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-question"
+                            aria-expanded="false"
+                        >
+                            <span>
+                                How do returns and refunds work?
+                            </span>
+
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Return and refund availability
+                                depends on the product and order
+                                conditions. Contact our support
+                                team for assistance with your order.
+                            </p>
+
+                            <a href="contact.html">
+                                Contact Support
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Account -->
+
+                    <article
+                        class="faq-item"
+                        data-category="account"
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-question"
+                            aria-expanded="false"
+                        >
+                            <span>
+                                I forgot my password. What should I do?
+                            </span>
+
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Use the Forgot Password option
+                                available on the login page to
+                                continue with account recovery.
+                            </p>
+
+                            <a href="login.html">
+                                Go to Login
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Products -->
+
+                    <article
+                        class="faq-item"
+                        data-category="products"
+                    >
+
+                        <button
+                            type="button"
+                            class="faq-question"
+                            aria-expanded="false"
+                        >
+                            <span>
+                                How can I find a specific product?
+                            </span>
+
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Use the Products page to browse
+                                categories and available products.
+                                You can also use the search feature
+                                on the store.
+                            </p>
+
+                            <a href="products.html">
+                                Browse Products
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- No Search Results -->
+
+                <div
+                    id="noResults"
+                    class="no-results"
+                >
+
+                    <div class="no-results-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+
+                    <h3>
+                        No results found
+                    </h3>
+
+                    <p>
+                        Try searching with different keywords.
+                    </p>
+
+                    <button
+                        type="button"
+                        id="clearSearchBtn"
+                    >
+                        Clear Search
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SUPPORT CTA
+        ========================== -->
+
+        <section class="support-section">
+
+            <div class="help-container">
+
+                <div class="support-card">
+
+                    <div class="support-icon">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+
+                    <div class="support-content">
+
+                        <span>
+                            Still Need Help?
+                        </span>
+
+                        <h2>
+                            Our Support Team Is Here For You
+                        </h2>
+
+                        <p>
+                            Can't find the answer you're looking for?
+                            Send us a message and we'll help you.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="contact.html"
+                        class="support-btn"
+                    >
+                        Contact Us
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="help-footer">
+
+        <div class="help-container">
+
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+
+                    <a
+                        href="index.html"
+                        class="help-logo"
+                    >
+                        <span class="logo-icon">
+                            <i class="fa-solid fa-bolt"></i>
+                        </span>
+
+                        <span class="logo-text">
+                            KHAN <strong>Store</strong>
+                        </span>
+                    </a>
+
+                    <p>
+                        Premium technology, smart gadgets
+                        and everyday products delivered
+                        across India.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>Shop</h3>
+
+                    <a href="products.html">
+                        Products
+                    </a>
+
+                    <a href="cart.html">
+                        Cart
+                    </a>
+
+                    <a href="wishlist.html">
+                        Wishlist
+                    </a>
+
+                    <a href="track-order.html">
+                        Track Order
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>Company</h3>
+
+                    <a href="about.html">
+                        About Us
+                    </a>
+
+                    <a href="contact.html">
+                        Contact
+                    </a>
+
+                    <a href="help.html">
+                        Help Center
+                    </a>
+
+                    <a href="sell-with-us.html">
+                        Sell With Us
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>Support</h3>
+
+                    <a href="help.html#faq">
+                        FAQs
+                    </a>
+
+                    <a href="contact.html">
+                        Customer Support
+                    </a>
+
+                    <a href="privacy-policy.html">
+                        Privacy Policy
+                    </a>
+
+                    <a href="terms.html">
+                        Terms & Conditions
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    ©
+                    <span id="footerYear">
+                        2026
+                    </span>
+                    KHAN Store. All rights reserved.
+                </p>
+
+                <div class="footer-socials">
+
+                    <a
+                        href="#"
+                        aria-label="Facebook"
+                    >
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a
+                        href="#"
+                        aria-label="Instagram"
+                    >
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a
+                        href="#"
+                        aria-label="X"
+                    >
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+                    <a
+                        href="#"
+                        aria-label="YouTube"
+                    >
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         TOAST
+    ========================== -->
+
+    <div
+        id="helpToast"
+        class="help-toast"
+        role="status"
+        aria-live="polite"
+    >
+
+        <div class="toast-icon">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+
+        <div class="toast-content">
+            <strong>Done</strong>
+            <span id="helpToastMessage"></span>
+        </div>
+
+        <button
+            type="button"
+            id="helpToastClose"
+            aria-label="Close notification"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="help.js"></script>
+
+</body>
+</html>

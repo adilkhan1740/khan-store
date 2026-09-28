@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Login | KHAN Store</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <link rel="stylesheet" href="admin-login.css">
+</head>
+
+<body>
+
+    <div class="admin-page">
+
+        <!-- LEFT SIDE -->
+        <div class="admin-left">
+
+            <div class="brand">
+                <div class="brand-icon">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+
+                <div>
+                    <h1>KHAN Store</h1>
+                    <span>ADMIN PANEL</span>
+                </div>
+            </div>
+
+            <div class="admin-content">
+
+                <div class="admin-badge">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Secure Admin Area
+                </div>
+
+                <h2>
+                    Welcome Back,<br>
+                    <span>Administrator</span>
+                </h2>
+
+                <p>
+                    Manage products, orders, users, sellers and store
+                    analytics from your KHAN Store administration panel.
+                </p>
+
+                <div class="admin-features">
+
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-box"></i>
+                        </div>
+
+                        <div>
+                            <h4>Manage Products</h4>
+                            <p>Add, edit and manage products</p>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+
+                        <div>
+                            <h4>Manage Orders</h4>
+                            <p>View and update customer orders</p>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+
+                        <div>
+                            <h4>Store Analytics</h4>
+                            <p>Monitor your store performance</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="copyright">
+                © 2026 KHAN Store. Admin Panel
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+        <div class="admin-right">
+
+            <div class="login-card">
+
+                <div class="mobile-logo">
+                    <div class="mobile-logo-icon">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </div>
+
+                    <h1>KHAN Store</h1>
+                    <span>ADMIN PANEL</span>
+                </div>
+
+                <div class="login-header">
+
+                    <div class="login-icon">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+
+                    <h2>Admin Login</h2>
+
+                    <p>
+                        Sign in to access your administration dashboard.
+                    </p>
+
+                </div>
+
+
+                <!-- ERROR -->
+                <div id="loginError" class="message error-message">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span id="errorText"></span>
+                </div>
+
+
+                <!-- SUCCESS -->
+                <div id="loginSuccess" class="message success-message">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Login successful. Redirecting...</span>
+                </div>
+
+
+                <form id="adminLoginForm">
+
+                    <!-- EMAIL -->
+                    <div class="form-group">
+
+                        <label for="adminEmail">
+                            Admin Email
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="adminEmail"
+                                placeholder="Enter admin email"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+                    <div class="form-group">
+
+                        <label for="adminPassword">
+                            Password
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="adminPassword"
+                                placeholder="Enter password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                id="togglePassword"
+                                class="password-toggle"
+                                aria-label="Show password"
+                            >
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- REMEMBER -->
+                    <div class="login-options">
+
+                        <label class="remember">
+
+                            <input
+                                type="checkbox"
+                                id="rememberAdmin"
+                            >
+
+                            <span>Remember me</span>
+
+                        </label>
+
+                        <a href="#" id="forgotAdmin">
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+
+                    <!-- LOGIN BUTTON -->
+                    <button
+                        type="submit"
+                        id="loginButton"
+                        class="login-button"
+                    >
+                        <span class="button-text">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                            Login to Dashboard
+                        </span>
+
+                        <span class="button-loading">
+                            <i class="fa-solid fa-spinner fa-spin"></i>
+                            Signing in...
+                        </span>
+                    </button>
+
+                </form>
+
+
+                <!-- DEMO INFO -->
+                <div class="demo-box">
+
+                    <div class="demo-title">
+                        <i class="fa-solid fa-circle-info"></i>
+                        Demo Admin Login
+                    </div>
+
+                    <div class="demo-row">
+                        <span>Email</span>
+                        <strong>admin@khanstore.com</strong>
+                    </div>
+
+                    <div class="demo-row">
+                        <span>Password</span>
+                        <strong>KHAN@1234</strong>
+                    </div>
+
+                </div>
+
+
+                <a href="index.html" class="back-store">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to KHAN Store
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="admin-login.js"></script>
+
+</body>
+</html>

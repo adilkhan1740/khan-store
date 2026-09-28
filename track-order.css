@@ -1,0 +1,1085 @@
+/* =========================================================
+   KHAN STORE - TRACK ORDER
+   CLEAN PROFESSIONAL CSS
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #1f2937;
+    min-height: 100vh;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* =========================================================
+   UTILITY
+========================================================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.track-header {
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    position: relative;
+    z-index: 1000;
+}
+
+.header-inner {
+    width: 100%;
+    max-width: 1200px;
+    height: 72px;
+    margin: auto;
+    padding: 0 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* LOGO */
+
+.track-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    text-decoration: none;
+    color: #111827;
+
+    font-size: 22px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ff6b00;
+    color: #ffffff;
+
+    border-radius: 9px;
+
+    font-size: 18px;
+}
+
+
+/* DESKTOP NAV */
+
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.desktop-nav a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    text-decoration: none;
+    color: #1f2937;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    transition: color 0.2s ease;
+}
+
+.desktop-nav a:hover {
+    color: #ff6b00;
+}
+
+.desktop-nav i {
+    font-size: 15px;
+}
+
+.nav-count {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* MOBILE BUTTON */
+
+.mobile-menu-btn {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: 0;
+    border-radius: 9px;
+
+    background: #f3f4f6;
+    color: #111827;
+
+    cursor: pointer;
+}
+
+
+/* MOBILE NAV */
+
+.mobile-nav {
+    display: none;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.track-hero {
+    width: 100%;
+    background: linear-gradient(
+        135deg,
+        #111827,
+        #1f2937
+    );
+
+    color: #ffffff;
+}
+
+.hero-content {
+    max-width: 1200px;
+    min-height: 235px;
+
+    margin: auto;
+    padding: 45px 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.hero-icon {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    line-height: 1.2;
+    font-weight: 800;
+
+    margin-bottom: 12px;
+}
+
+.hero-content p {
+    color: #d1d5db;
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.track-main {
+    width: 100%;
+    max-width: 1050px;
+
+    margin: 0 auto;
+    padding: 45px 20px 70px;
+}
+
+
+/* =========================================================
+   SEARCH CARD
+========================================================= */
+
+.tracking-search-card {
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    padding: 32px;
+
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.07);
+
+    text-align: center;
+
+    margin-bottom: 26px;
+}
+
+.search-icon {
+    font-size: 20px;
+    color: #1f2937;
+    margin-bottom: 8px;
+}
+
+.tracking-search-card h2 {
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.search-description {
+    color: #4b5563;
+    margin-bottom: 14px;
+}
+
+.track-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 10px;
+}
+
+.input-wrapper {
+    width: 330px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    padding: 0 14px;
+}
+
+.input-wrapper i {
+    color: #6b7280;
+    margin-right: 10px;
+}
+
+.input-wrapper input {
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+    outline: 0;
+
+    color: #111827;
+    background: transparent;
+}
+
+.input-wrapper input::placeholder {
+    color: #9ca3af;
+}
+
+
+/* TRACK BUTTON */
+
+.track-btn {
+    height: 52px;
+
+    padding: 0 24px;
+
+    border: 0;
+    border-radius: 10px;
+
+    background: #ff6b00;
+    color: #ffffff;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    transition: 0.2s ease;
+}
+
+.track-btn:hover {
+    background: #e85f00;
+    transform: translateY(-1px);
+}
+
+.search-help {
+    margin-top: 10px;
+
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.search-help i {
+    margin-right: 4px;
+}
+
+
+/* ERROR */
+
+.track-error {
+    max-width: 600px;
+
+    margin: 18px auto 0;
+
+    padding: 12px 15px;
+
+    border-radius: 8px;
+
+    background: #fef2f2;
+    color: #b91c1c;
+
+    font-size: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+
+/* =========================================================
+   INITIAL STATE
+========================================================= */
+
+.initial-state {
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    padding: 55px 25px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.initial-icon {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ff6b00;
+    color: #ffffff;
+
+    border-radius: 10px;
+
+    font-size: 25px;
+}
+
+.initial-state h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.initial-state p {
+    color: #6b7280;
+}
+
+
+/* =========================================================
+   ORDER RESULT
+========================================================= */
+
+.order-result {
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    padding: 32px;
+
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.07);
+}
+
+
+/* RESULT HEADER */
+
+.result-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 25px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.result-label {
+    display: block;
+
+    color: #6b7280;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    margin-bottom: 5px;
+}
+
+.result-header h2 {
+    font-size: 23px;
+}
+
+.status-badge {
+    padding: 9px 16px;
+
+    border-radius: 30px;
+
+    background: #fff7ed;
+    color: #c2410c;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.tracking-timeline {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 10px;
+
+    padding: 35px 0;
+}
+
+.tracking-step {
+    position: relative;
+
+    text-align: center;
+
+    color: #9ca3af;
+}
+
+.tracking-step::after {
+    content: "";
+
+    position: absolute;
+
+    top: 21px;
+    left: calc(50% + 27px);
+
+    width: calc(100% - 54px);
+    height: 2px;
+
+    background: #e5e7eb;
+}
+
+.tracking-step:last-child::after {
+    display: none;
+}
+
+.step-circle {
+    width: 44px;
+    height: 44px;
+
+    margin: 0 auto 10px;
+
+    border-radius: 50%;
+
+    background: #e5e7eb;
+    color: #9ca3af;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    z-index: 2;
+}
+
+.tracking-step.completed {
+    color: #1f2937;
+}
+
+.tracking-step.completed .step-circle {
+    background: #ff6b00;
+    color: #ffffff;
+}
+
+.tracking-step.completed::after {
+    background: #ff6b00;
+}
+
+.step-content strong {
+    display: block;
+
+    font-size: 13px;
+
+    margin-bottom: 4px;
+}
+
+.step-content span {
+    display: block;
+
+    font-size: 11px;
+
+    color: #6b7280;
+}
+
+
+/* =========================================================
+   INFO GRID
+========================================================= */
+
+.order-info-grid,
+.bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+}
+
+.info-card,
+.price-card,
+.products-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    padding: 22px;
+
+    background: #ffffff;
+}
+
+.info-card-title,
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    margin-bottom: 18px;
+}
+
+.info-card-title i,
+.section-title i {
+    color: #ff6b00;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 11px 0;
+
+    border-bottom: 1px solid #f0f0f0;
+
+    font-size: 14px;
+}
+
+.info-row:last-child {
+    border-bottom: 0;
+}
+
+.info-row span {
+    color: #6b7280;
+}
+
+.info-row strong {
+    color: #111827;
+}
+
+
+/* CUSTOMER */
+
+.customer-details {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    font-size: 14px;
+}
+
+.customer-details strong {
+    font-size: 16px;
+}
+
+.customer-details span {
+    color: #6b7280;
+}
+
+
+/* =========================================================
+   PRODUCTS
+========================================================= */
+
+.products-card {
+    margin-bottom: 20px;
+}
+
+.order-items {
+    display: flex;
+    flex-direction: column;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 14px 0;
+
+    border-top: 1px solid #f0f0f0;
+}
+
+.order-item:first-child {
+    border-top: 0;
+}
+
+.order-item-image {
+    width: 70px;
+    height: 70px;
+
+    border-radius: 10px;
+
+    object-fit: cover;
+
+    background: #f3f4f6;
+}
+
+.order-item-info {
+    flex: 1;
+}
+
+.order-item-info h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.order-item-info p {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.order-item-price {
+    font-weight: 700;
+    color: #111827;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.price-card {
+    background: #f9fafb;
+}
+
+.price-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 8px 0;
+
+    font-size: 14px;
+}
+
+.price-row span {
+    color: #6b7280;
+}
+
+.discount-row {
+    color: #16a34a;
+}
+
+.discount-row strong {
+    color: #16a34a;
+}
+
+.price-divider {
+    height: 1px;
+    background: #d1d5db;
+
+    margin: 10px 0;
+}
+
+.price-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: 4px;
+
+    font-size: 18px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.result-actions {
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 10px;
+}
+
+.secondary-btn,
+.primary-btn {
+    min-height: 46px;
+
+    padding: 0 18px;
+
+    border-radius: 9px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    cursor: pointer;
+}
+
+.secondary-btn {
+    border: 1px solid #d1d5db;
+
+    background: #ffffff;
+    color: #374151;
+}
+
+.primary-btn {
+    border: 0;
+
+    background: #ff6b00;
+    color: #ffffff;
+}
+
+.primary-btn:hover {
+    background: #e85f00;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.track-footer {
+    background: #111827;
+    color: #ffffff;
+
+    text-align: center;
+
+    padding: 35px 20px;
+}
+
+.footer-logo {
+    font-size: 16px;
+    font-weight: 700;
+
+    margin-bottom: 8px;
+}
+
+.footer-logo i {
+    color: #ff6b00;
+}
+
+.track-footer p {
+    color: #d1d5db;
+    font-size: 13px;
+
+    margin: 4px 0;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin: 8px 0;
+}
+
+.footer-links a {
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+}
+
+.footer-links a:hover {
+    color: #ff6b00;
+}
+
+.copyright {
+    margin-top: 10px !important;
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.toast {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    min-width: 230px;
+
+    padding: 14px 18px;
+
+    background: #111827;
+    color: #ffffff;
+
+    border-radius: 9px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+    z-index: 5000;
+
+    font-size: 14px;
+}
+
+.toast i {
+    color: #22c55e;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .header-inner {
+        height: 64px;
+        padding: 0 16px;
+    }
+
+    .track-logo {
+        font-size: 19px;
+    }
+
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mobile-nav {
+        display: none;
+
+        flex-direction: column;
+
+        padding: 8px 16px 15px;
+
+        border-top: 1px solid #e5e7eb;
+
+        background: #ffffff;
+    }
+
+    .mobile-nav.active {
+        display: flex;
+    }
+
+    .mobile-nav a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        padding: 13px 10px;
+
+        text-decoration: none;
+
+        color: #1f2937;
+
+        border-radius: 8px;
+    }
+
+    .mobile-nav a:hover {
+        background: #f3f4f6;
+    }
+
+
+    /* HERO */
+
+    .hero-content {
+        min-height: 200px;
+        padding: 35px 18px;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+
+    /* MAIN */
+
+    .track-main {
+        padding: 25px 15px 45px;
+    }
+
+
+    /* SEARCH */
+
+    .tracking-search-card {
+        padding: 24px 18px;
+    }
+
+    .track-form {
+        flex-direction: column;
+    }
+
+    .input-wrapper {
+        width: 100%;
+    }
+
+    .track-btn {
+        width: 100%;
+    }
+
+
+    /* RESULT */
+
+    .order-result {
+        padding: 22px 17px;
+    }
+
+    .result-header {
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .result-header h2 {
+        font-size: 18px;
+    }
+
+
+    /* TIMELINE */
+
+    .tracking-timeline {
+        display: flex;
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+    .tracking-step {
+        display: flex;
+        align-items: center;
+
+        text-align: left;
+
+        gap: 12px;
+    }
+
+    .tracking-step::after {
+        display: none;
+    }
+
+    .step-circle {
+        margin: 0;
+        flex-shrink: 0;
+    }
+
+
+    /* GRIDS */
+
+    .order-info-grid,
+    .bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* PRODUCTS */
+
+    .order-item {
+        align-items: flex-start;
+    }
+
+    .order-item-image {
+        width: 58px;
+        height: 58px;
+    }
+
+
+    /* ACTIONS */
+
+    .result-actions {
+        flex-direction: column;
+    }
+
+    .secondary-btn,
+    .primary-btn {
+        width: 100%;
+    }
+
+
+    /* FOOTER */
+
+    .track-footer {
+        padding: 28px 15px;
+    }
+
+}

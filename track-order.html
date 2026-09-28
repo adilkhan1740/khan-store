@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Track Order — KHAN Store</title>
+
+    <meta
+        name="description"
+        content="Track your KHAN Store order and check the latest delivery status."
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    >
+
+    <!-- Track Order CSS -->
+    <link rel="stylesheet" href="track-order.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="track-header">
+
+    <div class="header-inner">
+
+        <!-- LOGO -->
+        <a href="index.html" class="track-logo">
+            <span class="logo-icon">
+                <i class="fa-solid fa-bolt"></i>
+            </span>
+
+            <span>KHAN Store</span>
+        </a>
+
+        <!-- DESKTOP NAV -->
+        <nav class="desktop-nav">
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                Home
+            </a>
+
+            <a href="products.html">
+                <i class="fa-solid fa-box"></i>
+                Products
+            </a>
+
+            <a href="wishlist.html">
+                <i class="fa-regular fa-heart"></i>
+                Wishlist
+                <span class="nav-count wishlist-count">0</span>
+            </a>
+
+            <a href="cart.html">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Cart
+                <span class="nav-count cart-count">0</span>
+            </a>
+
+            <a href="account.html">
+                <i class="fa-regular fa-user"></i>
+                Account
+            </a>
+        </nav>
+
+        <!-- MOBILE BUTTON -->
+        <button
+            type="button"
+            class="mobile-menu-btn"
+            id="mobileMenuBtn"
+            aria-label="Open menu"
+        >
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </div>
+
+    <!-- MOBILE NAV -->
+    <nav class="mobile-nav" id="mobileMenu">
+
+        <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            Home
+        </a>
+
+        <a href="products.html">
+            <i class="fa-solid fa-box"></i>
+            Products
+        </a>
+
+        <a href="wishlist.html">
+            <i class="fa-regular fa-heart"></i>
+            Wishlist
+        </a>
+
+        <a href="cart.html">
+            <i class="fa-solid fa-cart-shopping"></i>
+            Cart
+        </a>
+
+        <a href="account.html">
+            <i class="fa-regular fa-user"></i>
+            Account
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="track-hero">
+
+    <div class="hero-content">
+
+        <div class="hero-icon">
+            <i class="fa-solid fa-location-dot"></i>
+        </div>
+
+        <h1>Track Your Order</h1>
+
+        <p>
+            Enter your KHAN Store Order ID to check your order status.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main class="track-main">
+
+    <!-- SEARCH CARD -->
+    <section class="tracking-search-card">
+
+        <div class="search-icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <h2>Find Your Order</h2>
+
+        <p class="search-description">
+            Enter your Order ID below
+        </p>
+
+        <form id="trackForm" class="track-form">
+
+            <div class="input-wrapper">
+
+                <i class="fa-solid fa-receipt"></i>
+
+                <input
+                    type="text"
+                    id="orderIdInput"
+                    placeholder="Example: KHS50973922"
+                    autocomplete="off"
+                    required
+                >
+
+            </div>
+
+            <button
+                type="submit"
+                class="track-btn"
+            >
+                <i class="fa-solid fa-location-arrow"></i>
+                Track Order
+            </button>
+
+        </form>
+
+        <p class="search-help">
+            <i class="fa-solid fa-circle-info"></i>
+            You can find your Order ID in your order confirmation.
+        </p>
+
+        <!-- ERROR -->
+        <div
+            id="trackError"
+            class="track-error hidden"
+        >
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span id="trackErrorText">
+                Order not found.
+            </span>
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         INITIAL STATE
+    ====================================================== -->
+
+    <section
+        id="initialState"
+        class="initial-state"
+    >
+
+        <div class="initial-icon">
+            <i class="fa-solid fa-box"></i>
+        </div>
+
+        <h2>Ready to Track?</h2>
+
+        <p>
+            Enter your KHAN Store Order ID above to see your latest order
+            information.
+        </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         ORDER RESULT
+    ====================================================== -->
+
+    <section
+        id="orderResult"
+        class="order-result hidden"
+    >
+
+        <!-- RESULT HEADER -->
+
+        <div class="result-header">
+
+            <div>
+                <span class="result-label">
+                    ORDER ID
+                </span>
+
+                <h2 id="displayOrderId">
+                    KHS00000000
+                </h2>
+            </div>
+
+            <div class="status-badge" id="currentStatus">
+                Placed
+            </div>
+
+        </div>
+
+
+        <!-- TRACKING TIMELINE -->
+
+        <div class="tracking-timeline">
+
+            <div
+                class="tracking-step"
+                data-step="Placed"
+            >
+                <div class="step-circle">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <div class="step-content">
+                    <strong>Order Placed</strong>
+                    <span>Your order has been placed.</span>
+                </div>
+            </div>
+
+
+            <div
+                class="tracking-step"
+                data-step="Processing"
+            >
+                <div class="step-circle">
+                    <i class="fa-solid fa-box-open"></i>
+                </div>
+
+                <div class="step-content">
+                    <strong>Processing</strong>
+                    <span>Your order is being prepared.</span>
+                </div>
+            </div>
+
+
+            <div
+                class="tracking-step"
+                data-step="Shipped"
+            >
+                <div class="step-circle">
+                    <i class="fa-solid fa-truck"></i>
+                </div>
+
+                <div class="step-content">
+                    <strong>Shipped</strong>
+                    <span>Your order is on the way.</span>
+                </div>
+            </div>
+
+
+            <div
+                class="tracking-step"
+                data-step="Out for Delivery"
+            >
+                <div class="step-circle">
+                    <i class="fa-solid fa-motorcycle"></i>
+                </div>
+
+                <div class="step-content">
+                    <strong>Out for Delivery</strong>
+                    <span>Your order is arriving soon.</span>
+                </div>
+            </div>
+
+
+            <div
+                class="tracking-step"
+                data-step="Delivered"
+            >
+                <div class="step-circle">
+                    <i class="fa-solid fa-house"></i>
+                </div>
+
+                <div class="step-content">
+                    <strong>Delivered</strong>
+                    <span>Your order has been delivered.</span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- ORDER INFORMATION -->
+
+        <div class="order-info-grid">
+
+            <div class="info-card">
+
+                <div class="info-card-title">
+                    <i class="fa-regular fa-calendar"></i>
+                    Order Information
+                </div>
+
+                <div class="info-row">
+                    <span>Order Date</span>
+                    <strong id="displayOrderDate">—</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>Estimated Delivery</span>
+                    <strong id="estimatedDelivery">—</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>Total Items</span>
+                    <strong id="itemCount">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-card-title">
+                    <i class="fa-regular fa-user"></i>
+                    Customer Details
+                </div>
+
+                <div class="customer-details">
+
+                    <strong id="customerName">
+                        —
+                    </strong>
+
+                    <span id="customerAddress">
+                        —
+                    </span>
+
+                    <span id="customerCityState">
+                        —
+                    </span>
+
+                    <span id="customerPhone">
+                        —
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCTS -->
+
+        <div class="products-card">
+
+            <div class="section-title">
+                <i class="fa-solid fa-box"></i>
+                Order Items
+            </div>
+
+            <div
+                id="orderItems"
+                class="order-items"
+            ></div>
+
+        </div>
+
+
+        <!-- PAYMENT + PRICE -->
+
+        <div class="bottom-grid">
+
+            <div class="info-card">
+
+                <div class="info-card-title">
+                    <i class="fa-regular fa-credit-card"></i>
+                    Payment & Delivery
+                </div>
+
+                <div class="info-row">
+                    <span>Payment Method</span>
+                    <strong id="paymentMethod">—</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>Delivery Method</span>
+                    <strong id="deliveryMethod">—</strong>
+                </div>
+
+            </div>
+
+
+            <div class="price-card">
+
+                <div class="price-row">
+                    <span>Subtotal</span>
+                    <strong id="trackSubtotal">₹0</strong>
+                </div>
+
+                <div class="price-row">
+                    <span>Delivery</span>
+                    <strong id="trackDelivery">₹0</strong>
+                </div>
+
+                <div
+                    class="price-row discount-row"
+                    id="trackDiscountRow"
+                >
+                    <span>Discount</span>
+                    <strong id="trackDiscount">−₹0</strong>
+                </div>
+
+                <div class="price-divider"></div>
+
+                <div class="price-total">
+                    <span>Total</span>
+                    <strong id="trackTotal">₹0</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTIONS -->
+
+        <div class="result-actions">
+
+            <button
+                type="button"
+                id="copyOrderBtn"
+                class="secondary-btn"
+            >
+                <i class="fa-regular fa-copy"></i>
+                Copy Order ID
+            </button>
+
+            <a
+                href="my-orders.html"
+                id="viewOrderBtn"
+                class="primary-btn"
+            >
+                <i class="fa-solid fa-list-check"></i>
+                View My Orders
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="track-footer">
+
+    <div class="footer-logo">
+        <i class="fa-solid fa-bolt"></i>
+        KHAN Store
+    </div>
+
+    <p>
+        Premium products. Reliable service. Simple shopping.
+    </p>
+
+    <div class="footer-links">
+        <a href="about.html">About Us</a>
+        <a href="help.html">Help Center</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="my-orders.html">My Orders</a>
+    </div>
+
+    <p class="copyright">
+        © 2026 KHAN Store. All rights reserved.
+    </p>
+
+</footer>
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div
+    id="trackToast"
+    class="toast hidden"
+>
+    <i class="fa-solid fa-check-circle"></i>
+    <span id="toastMessage">
+        Order ID copied.
+    </span>
+</div>
+
+
+<!-- JAVASCRIPT -->
+
+<script src="track-order.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout - KHAN Store</title>
+
+    <meta
+        name="description"
+        content="Secure checkout - KHAN Store"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    >
+
+    <!-- Checkout CSS -->
+    <link rel="stylesheet" href="checkout.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="checkout-header">
+
+    <div class="checkout-header-inner">
+
+        <a href="index.html" class="logo">
+            <span class="logo-main">KHAN</span>
+            <span class="logo-store">STORE</span>
+        </a>
+
+        <div class="secure-checkout">
+            <i class="fa-solid fa-lock"></i>
+            <span>Secure Checkout</span>
+        </div>
+
+        <a href="cart.html" class="back-cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            Back to Cart
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- ================= BREADCRUMB ================= -->
+
+<div class="checkout-breadcrumb">
+
+    <div class="checkout-container">
+
+        <a href="index.html">Home</a>
+
+        <i class="fa-solid fa-chevron-right"></i>
+
+        <a href="cart.html">Cart</a>
+
+        <i class="fa-solid fa-chevron-right"></i>
+
+        <span>Checkout</span>
+
+    </div>
+
+</div>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="checkout-page">
+
+    <div class="checkout-container">
+
+        <div class="checkout-title">
+
+            <span class="small-title">
+                <i class="fa-solid fa-bag-shopping"></i>
+                Complete Your Order
+            </span>
+
+            <h1>Checkout</h1>
+
+            <p>
+                Enter your delivery details and review your order before placing it.
+            </p>
+
+        </div>
+
+
+        <!-- ================= CHECKOUT GRID ================= -->
+
+        <div class="checkout-grid">
+
+
+            <!-- ================= LEFT ================= -->
+
+            <section class="checkout-left">
+
+
+                <!-- CUSTOMER INFORMATION -->
+
+                <div class="checkout-card">
+
+                    <div class="card-heading">
+
+                        <div class="heading-icon">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div>
+                            <h2>Contact Information</h2>
+                            <p>We'll use this information for your order.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="fullName">
+                                Full Name
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="fullName"
+                                name="fullName"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required
+                            >
+
+                            <small class="error-message" id="fullNameError"></small>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Mobile Number
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="Enter mobile number"
+                                maxlength="10"
+                                autocomplete="tel"
+                                required
+                            >
+
+                            <small class="error-message" id="phoneError"></small>
+
+                        </div>
+
+
+                        <div class="form-group full-width">
+
+                            <label for="email">
+                                Email Address
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email address"
+                                autocomplete="email"
+                                required
+                            >
+
+                            <small class="error-message" id="emailError"></small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= DELIVERY ADDRESS ================= -->
+
+                <div class="checkout-card">
+
+                    <div class="card-heading">
+
+                        <div class="heading-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+
+                        <div>
+                            <h2>Delivery Address</h2>
+                            <p>Where should we deliver your order?</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group full-width">
+
+                            <label for="address">
+                                Street Address
+                                <span>*</span>
+                            </label>
+
+                            <textarea
+                                id="address"
+                                name="address"
+                                rows="3"
+                                placeholder="House No., Street, Area"
+                                autocomplete="street-address"
+                                required
+                            ></textarea>
+
+                            <small class="error-message" id="addressError"></small>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="city">
+                                City
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="city"
+                                name="city"
+                                placeholder="Enter city"
+                                autocomplete="address-level2"
+                                required
+                            >
+
+                            <small class="error-message" id="cityError"></small>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="state">
+                                State
+                                <span>*</span>
+                            </label>
+
+                            <select
+                                id="state"
+                                name="state"
+                                required
+                            >
+
+                                <option value="">Select State</option>
+
+                                <option value="Andhra Pradesh">
+                                    Andhra Pradesh
+                                </option>
+
+                                <option value="Assam">
+                                    Assam
+                                </option>
+
+                                <option value="Bihar">
+                                    Bihar
+                                </option>
+
+                                <option value="Chhattisgarh">
+                                    Chhattisgarh
+                                </option>
+
+                                <option value="Delhi">
+                                    Delhi
+                                </option>
+
+                                <option value="Goa">
+                                    Goa
+                                </option>
+
+                                <option value="Gujarat">
+                                    Gujarat
+                                </option>
+
+                                <option value="Haryana">
+                                    Haryana
+                                </option>
+
+                                <option value="Himachal Pradesh">
+                                    Himachal Pradesh
+                                </option>
+
+                                <option value="Jharkhand">
+                                    Jharkhand
+                                </option>
+
+                                <option value="Karnataka">
+                                    Karnataka
+                                </option>
+
+                                <option value="Kerala">
+                                    Kerala
+                                </option>
+
+                                <option value="Madhya Pradesh">
+                                    Madhya Pradesh
+                                </option>
+
+                                <option value="Maharashtra">
+                                    Maharashtra
+                                </option>
+
+                                <option value="Manipur">
+                                    Manipur
+                                </option>
+
+                                <option value="Meghalaya">
+                                    Meghalaya
+                                </option>
+
+                                <option value="Mizoram">
+                                    Mizoram
+                                </option>
+
+                                <option value="Nagaland">
+                                    Nagaland
+                                </option>
+
+                                <option value="Odisha">
+                                    Odisha
+                                </option>
+
+                                <option value="Punjab">
+                                    Punjab
+                                </option>
+
+                                <option value="Rajasthan">
+                                    Rajasthan
+                                </option>
+
+                                <option value="Sikkim">
+                                    Sikkim
+                                </option>
+
+                                <option value="Tamil Nadu">
+                                    Tamil Nadu
+                                </option>
+
+                                <option value="Telangana">
+                                    Telangana
+                                </option>
+
+                                <option value="Tripura">
+                                    Tripura
+                                </option>
+
+                                <option value="Uttar Pradesh">
+                                    Uttar Pradesh
+                                </option>
+
+                                <option value="Uttarakhand">
+                                    Uttarakhand
+                                </option>
+
+                                <option value="West Bengal">
+                                    West Bengal
+                                </option>
+
+                            </select>
+
+                            <small class="error-message" id="stateError"></small>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="pincode">
+                                PIN Code
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="pincode"
+                                name="pincode"
+                                placeholder="6-digit PIN code"
+                                maxlength="6"
+                                inputmode="numeric"
+                                autocomplete="postal-code"
+                                required
+                            >
+
+                            <small class="error-message" id="pincodeError"></small>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="landmark">
+                                Landmark
+                                <small>(Optional)</small>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="landmark"
+                                name="landmark"
+                                placeholder="Nearby landmark"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= DELIVERY METHOD ================= -->
+
+                <div class="checkout-card">
+
+                    <div class="card-heading">
+
+                        <div class="heading-icon">
+                            <i class="fa-solid fa-truck"></i>
+                        </div>
+
+                        <div>
+                            <h2>Delivery Method</h2>
+                            <p>Select your preferred delivery option.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="delivery-options">
+
+                        <label class="delivery-option active">
+
+                            <input
+                                type="radio"
+                                name="delivery"
+                                value="standard"
+                                checked
+                            >
+
+                            <div class="delivery-radio"></div>
+
+                            <div class="delivery-info">
+
+                                <div class="delivery-name">
+                                    Standard Delivery
+                                </div>
+
+                                <div class="delivery-desc">
+                                    Delivery within 4–7 business days
+                                </div>
+
+                            </div>
+
+                            <div class="delivery-price">
+                                ₹99
+                            </div>
+
+                        </label>
+
+
+                        <label class="delivery-option">
+
+                            <input
+                                type="radio"
+                                name="delivery"
+                                value="express"
+                            >
+
+                            <div class="delivery-radio"></div>
+
+                            <div class="delivery-info">
+
+                                <div class="delivery-name">
+                                    Express Delivery
+                                </div>
+
+                                <div class="delivery-desc">
+                                    Delivery within 1–3 business days
+                                </div>
+
+                            </div>
+
+                            <div class="delivery-price">
+                                ₹199
+                            </div>
+
+                        </label>
+
+
+                        <label class="delivery-option">
+
+                            <input
+                                type="radio"
+                                name="delivery"
+                                value="free"
+                            >
+
+                            <div class="delivery-radio"></div>
+
+                            <div class="delivery-info">
+
+                                <div class="delivery-name">
+                                    Free Delivery
+                                </div>
+
+                                <div class="delivery-desc">
+                                    Delivery within 7–10 business days
+                                </div>
+
+                            </div>
+
+                            <div class="delivery-price">
+                                FREE
+                            </div>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= PAYMENT ================= -->
+
+                <div class="checkout-card">
+
+                    <div class="card-heading">
+
+                        <div class="heading-icon">
+                            <i class="fa-solid fa-credit-card"></i>
+                        </div>
+
+                        <div>
+                            <h2>Payment Method</h2>
+                            <p>Select a payment method.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="payment-options">
+
+                        <label class="payment-option active">
+
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="cod"
+                                checked
+                            >
+
+                            <div class="payment-icon">
+                                <i class="fa-solid fa-money-bill-wave"></i>
+                            </div>
+
+                            <div class="payment-details">
+
+                                <strong>
+                                    Cash on Delivery
+                                </strong>
+
+                                <span>
+                                    Pay when your order arrives
+                                </span>
+
+                            </div>
+
+                            <i class="fa-solid fa-circle-check selected-icon"></i>
+
+                        </label>
+
+
+                        <label class="payment-option">
+
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="online"
+                            >
+
+                            <div class="payment-icon">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+
+                            <div class="payment-details">
+
+                                <strong>
+                                    Online Payment
+                                </strong>
+
+                                <span>
+                                    Payment gateway can be connected later
+                                </span>
+
+                            </div>
+
+                            <i class="fa-solid fa-circle-check selected-icon"></i>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- ================= RIGHT ================= -->
+
+            <aside class="checkout-right">
+
+                <div class="order-summary-card">
+
+                    <div class="summary-header">
+
+                        <div>
+
+                            <h2>Your Order</h2>
+
+                            <span id="summaryItemCount">
+                                0 items
+                            </span>
+
+                        </div>
+
+                        <a href="cart.html">
+                            Edit Cart
+                        </a>
+
+                    </div>
+
+
+                    <!-- PRODUCTS -->
+
+                    <div
+                        class="checkout-products"
+                        id="checkoutProducts"
+                    ></div>
+
+
+                    <!-- PRICE -->
+
+                    <div class="price-breakdown">
+
+                        <div class="price-row">
+
+                            <span>
+                                Subtotal
+                            </span>
+
+                            <strong id="checkoutSubtotal">
+                                ₹0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="price-row">
+
+                            <span>
+                                Delivery
+                            </span>
+
+                            <strong id="checkoutDelivery">
+                                ₹99
+                            </strong>
+
+                        </div>
+
+
+                        <div
+                            class="price-row discount-row"
+                            id="discountRow"
+                            style="display:none;"
+                        >
+
+                            <span>
+                                Discount
+                            </span>
+
+                            <strong id="checkoutDiscount">
+                                -₹0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TOTAL -->
+
+                    <div class="total-row">
+
+                        <div>
+
+                            <span>
+                                Total Amount
+                            </span>
+
+                            <small>
+                                Inclusive of applicable taxes
+                            </small>
+
+                        </div>
+
+                        <strong id="checkoutTotal">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <!-- PLACE ORDER -->
+
+                    <button
+                        type="button"
+                        class="place-order-btn"
+                        id="placeOrderBtn"
+                    >
+
+                        <span>
+                            <i class="fa-solid fa-lock"></i>
+                            Place Order
+                        </span>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+
+                    <div class="secure-note">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        <span>
+                            Your information is securely handled.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TRUST -->
+
+                <div class="checkout-trust">
+
+                    <div class="trust-item">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        <div>
+                            <strong>Secure Checkout</strong>
+                            <span>Your data is protected</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="trust-item">
+
+                        <i class="fa-solid fa-rotate-left"></i>
+
+                        <div>
+                            <strong>Easy Returns</strong>
+                            <span>Simple return process</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="trust-item">
+
+                        <i class="fa-solid fa-headset"></i>
+
+                        <div>
+                            <strong>Customer Support</strong>
+                            <span>We're here to help</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- ================= TOAST ================= -->
+
+<div
+    class="checkout-toast"
+    id="checkoutToast"
+>
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toastMessage">
+        Order placed successfully.
+    </span>
+</div>
+
+
+<!-- ================= SCRIPT ================= -->
+
+<script src="checkout.js"></script>
+
+</body>
+</html>

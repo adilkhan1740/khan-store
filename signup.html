@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | KHAN Store</title>
+
+    <link rel="stylesheet" href="signup.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    >
+</head>
+
+<body>
+
+<header class="signup-header">
+
+    <a href="index.html" class="logo">
+        <span>KHAN</span> Store
+    </a>
+
+    <a href="index.html" class="back-home">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back to Store
+    </a>
+
+</header>
+
+
+<main class="signup-page">
+
+    <div class="signup-container">
+
+        <!-- LEFT -->
+        <section class="signup-info">
+
+            <div class="info-content">
+
+                <div class="info-logo">
+                    <i class="fa-solid fa-user-plus"></i>
+                </div>
+
+                <h1>Join KHAN Store</h1>
+
+                <p>
+                    Create your account and enjoy a smooth,
+                    personalized shopping experience.
+                </p>
+
+                <div class="benefits">
+
+                    <div class="benefit">
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+
+                        <div>
+                            <h3>Save Your Wishlist</h3>
+                            <p>Keep your favourite products saved.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit">
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-box"></i>
+                        </div>
+
+                        <div>
+                            <h3>Track Your Orders</h3>
+                            <p>Manage and track your purchases easily.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit">
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+
+                        <div>
+                            <h3>Faster Checkout</h3>
+                            <p>Save your shopping details for checkout.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT -->
+        <section class="signup-box">
+
+            <div class="signup-title">
+
+                <div class="mobile-signup-icon">
+                    <i class="fa-solid fa-user-plus"></i>
+                </div>
+
+                <h2>Create your account</h2>
+
+                <p>
+                    Fill in your details to get started
+                </p>
+
+            </div>
+
+
+            <form id="signupForm">
+
+                <!-- NAME -->
+                <div class="form-group">
+
+                    <label for="fullName">
+                        Full Name
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- EMAIL -->
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHONE -->
+                <div class="form-group">
+
+                    <label for="phone">
+                        Mobile Number
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter mobile number"
+                            maxlength="10"
+                            autocomplete="tel"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Create a password"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="togglePassword"
+                        >
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONFIRM PASSWORD -->
+                <div class="form-group">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Confirm your password"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="toggleConfirmPassword"
+                        >
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TERMS -->
+                <label class="terms-check">
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        required
+                    >
+
+                    <span>
+                        I agree to the
+                        <a href="#">Terms & Conditions</a>
+                        and
+                        <a href="#">Privacy Policy</a>.
+                    </span>
+
+                </label>
+
+
+                <!-- BUTTON -->
+                <button
+                    type="submit"
+                    class="signup-btn"
+                    id="signupBtn"
+                >
+
+                    <span id="signupBtnText">
+                        Create Account
+                    </span>
+
+                    <i
+                        class="fa-solid fa-arrow-right"
+                        id="signupBtnIcon"
+                    ></i>
+
+                </button>
+
+
+                <div class="demo-note">
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    <span>
+                        Frontend demo only. Don't use real passwords
+                        or sensitive information.
+                    </span>
+
+                </div>
+
+            </form>
+
+
+            <!-- LOGIN -->
+            <div class="login-area">
+
+                <span>Already have an account?</span>
+
+                <a href="login.html">
+                    Login
+                </a>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<!-- TOAST -->
+<div id="toast" class="toast">
+
+    <i id="toastIcon" class="fa-solid fa-circle-check"></i>
+
+    <span id="toastMessage">
+        Account created successfully
+    </span>
+
+</div>
+
+
+<script src="signup.js"></script>
+
+</body>
+</html>
