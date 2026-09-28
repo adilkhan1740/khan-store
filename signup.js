@@ -1,361 +1,362 @@
+// ========================================
+// KHAN Store - Signup Page
+// ========================================
+
 document.addEventListener("DOMContentLoaded", () => {
+    const signupForm = document.getElementById("signupForm");
 
-    const form = document.getElementById("signupForm");
-
-    const fullName = document.getElementById("fullName");
-    const email = document.getElementById("email");
-    const phone = document.getElementById("phone");
-    const password = document.getElementById("password");
-    const confirmPassword = document.getElementById("confirmPassword");
-    const terms = document.getElementById("terms");
-
-    const togglePassword = document.getElementById("togglePassword");
-    const toggleConfirmPassword = document.getElementById("toggleConfirmPassword");
-
-    const signupBtn = document.getElementById("signupBtn");
-    const signupBtnText = document.getElementById("signupBtnText");
-    const signupBtnIcon = document.getElementById("signupBtnIcon");
-
-    const toast = document.getElementById("toast");
-    const toastMessage = document.getElementById("toastMessage");
-    const toastIcon = document.getElementById("toastIcon");
-
-
-    // =========================================
-    // TOAST
-    // =========================================
-
-    function showToast(message, type = "success") {
-
-        toastMessage.textContent = message;
-
-        if (type === "error") {
-
-            toastIcon.className =
-                "fa-solid fa-circle-exclamation";
-
-            toastIcon.style.color = "#ef4444";
-
-        } else {
-
-            toastIcon.className =
-                "fa-solid fa-circle-check";
-
-            toastIcon.style.color = "#4ade80";
-        }
-
-        toast.classList.add("show");
-
-        setTimeout(() => {
-            toast.classList.remove("show");
-        }, 3000);
+    if (!signupForm) {
+        console.error("Signup form not found.");
+        return;
     }
 
+    // ----------------------------------------
+    // Form Elements
+    // ----------------------------------------
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const phoneInput = document.getElementById("phone");
+    const passwordInput = document.getElementById("password");
+    const confirmPasswordInput = document.getElementById("confirmPassword");
 
-    // =========================================
-    // PASSWORD TOGGLE
-    // =========================================
+    // ----------------------------------------
+    // Error Elements
+    // ----------------------------------------
+    const nameError = document.getElementById("nameError");
+    const emailError = document.getElementById("emailError");
+    const phoneError = document.getElementById("phoneError");
+    const passwordError = document.getElementById("passwordError");
+    const confirmPasswordError = document.getElementById("confirmPasswordError");
 
-    function setupPasswordToggle(button, input) {
+    // ----------------------------------------
+    // Helper Functions
+    // ----------------------------------------
 
-        button.addEventListener("click", () => {
+    function showError(element, message) {
+        if (element) {
+            element.textContent = message;
+            element.style.display = "block";
+        }
+    }
 
-            const hidden = input.type === "password";
+    function clearError(element) {
+        if (element) {
+            element.textContent = "";
+            element.style.display = "none";
+        }
+    }
 
-            input.type = hidden ? "text" : "password";
+    function clearAllErrors() {
+        clearError(nameError);
+        clearError(emailError);
+        clearError(phoneError);
+        clearError(passwordError);
+        clearError(confirmPasswordError);
+    }
 
-            button.innerHTML = hidden
-                ? '<i class="fa-regular fa-eye-slash"></i>'
-                : '<i class="fa-regular fa-eye"></i>';
+    function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function isValidPhone(phone) {
+        return /^[6-9]\d{9}$/.test(phone);
+    }
+
+    function showMessage(message, type = "error") {
+        let messageBox = document.getElementById("signupMessage");
+
+        if (!messageBox) {
+            messageBox = document.createElement("div");
+            messageBox.id = "signupMessage";
+            messageBox.style.marginTop = "15px";
+            messageBox.style.padding = "12px 15px";
+            messageBox.style.borderRadius = "8px";
+            messageBox.style.fontSize = "14px";
+
+            signupForm.appendChild(messageBox);
+        }
+
+        messageBox.textContent = message;
+
+        if (type === "success") {
+            messageBox.style.background = "#e8f7ee";
+            messageBox.style.color = "#137333";
+            messageBox.style.border = "1px solid #b7e1c4";
+        } else {
+            messageBox.style.background = "#fdecec";
+            messageBox.style.color = "#b42318";
+            messageBox.style.border = "1px solid #f5b5b0";
+        }
+    }
+
+    // ----------------------------------------
+    // Password Show / Hide
+    // ----------------------------------------
+
+    const passwordToggle = document.querySelector(
+        '[data-toggle-password="password"]'
+    );
+
+    const confirmPasswordToggle = document.querySelector(
+        '[data-toggle-password="confirmPassword"]'
+    );
+
+    if (passwordToggle && passwordInput) {
+        passwordToggle.addEventListener("click", () => {
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                passwordToggle.classList.add("active");
+            } else {
+                passwordInput.type = "password";
+                passwordToggle.classList.remove("active");
+            }
         });
     }
 
-    setupPasswordToggle(
-        togglePassword,
-        password
-    );
+    if (confirmPasswordToggle && confirmPasswordInput) {
+        confirmPasswordToggle.addEventListener("click", () => {
+            if (confirmPasswordInput.type === "password") {
+                confirmPasswordInput.type = "text";
+                confirmPasswordToggle.classList.add("active");
+            } else {
+                confirmPasswordInput.type = "password";
+                confirmPasswordToggle.classList.remove("active");
+            }
+        });
+    }
 
-    setupPasswordToggle(
-        toggleConfirmPassword,
-        confirmPassword
-    );
+    // ----------------------------------------
+    // Signup Submit
+    // ----------------------------------------
 
-
-    // =========================================
-    // PHONE - ONLY NUMBERS
-    // =========================================
-
-    phone.addEventListener("input", () => {
-
-        phone.value = phone.value
-            .replace(/\D/g, "")
-            .slice(0, 10);
-
-    });
-
-
-    // =========================================
-    // SIGNUP
-    // =========================================
-
-    form.addEventListener("submit", async (event) => {
-
+    signupForm.addEventListener("submit", async (event) => {
         event.preventDefault();
 
+        clearAllErrors();
 
-        const nameValue = fullName.value.trim();
+        const nameValue = nameInput ? nameInput.value.trim() : "";
+        const emailValue = emailInput
+            ? emailInput.value.trim().toLowerCase()
+            : "";
+        const phoneValue = phoneInput ? phoneInput.value.trim() : "";
+        const passwordValue = passwordInput
+            ? passwordInput.value
+            : "";
+        const confirmPasswordValue = confirmPasswordInput
+            ? confirmPasswordInput.value
+            : "";
 
-        const emailValue =
-            email.value.trim().toLowerCase();
+        let isValid = true;
 
-        const phoneValue =
-            phone.value.trim();
-
-        const passwordValue =
-            password.value;
-
-        const confirmValue =
-            confirmPassword.value;
-
-
-        // =====================================
-        // NAME
-        // =====================================
+        // ----------------------------------------
+        // Name Validation
+        // ----------------------------------------
 
         if (nameValue.length < 2) {
+            showError(
+                nameError,
+                "Please enter your full name."
+            );
+            isValid = false;
+        }
 
-            showToast(
-                "Please enter your full name.",
+        // ----------------------------------------
+        // Email Validation
+        // ----------------------------------------
+
+        if (!emailValue) {
+            showError(
+                emailError,
+                "Please enter your email address."
+            );
+            isValid = false;
+        } else if (!isValidEmail(emailValue)) {
+            showError(
+                emailError,
+                "Please enter a valid email address."
+            );
+            isValid = false;
+        }
+
+        // ----------------------------------------
+        // Phone Validation
+        // ----------------------------------------
+
+        if (!phoneValue) {
+            showError(
+                phoneError,
+                "Please enter your mobile number."
+            );
+            isValid = false;
+        } else if (!isValidPhone(phoneValue)) {
+            showError(
+                phoneError,
+                "Please enter a valid 10-digit Indian mobile number."
+            );
+            isValid = false;
+        }
+
+        // ----------------------------------------
+        // Password Validation
+        // ----------------------------------------
+
+        if (!passwordValue) {
+            showError(
+                passwordError,
+                "Please enter a password."
+            );
+            isValid = false;
+        } else if (passwordValue.length < 6) {
+            showError(
+                passwordError,
+                "Password must be at least 6 characters."
+            );
+            isValid = false;
+        }
+
+        // ----------------------------------------
+        // Confirm Password Validation
+        // ----------------------------------------
+
+        if (!confirmPasswordValue) {
+            showError(
+                confirmPasswordError,
+                "Please confirm your password."
+            );
+            isValid = false;
+        } else if (passwordValue !== confirmPasswordValue) {
+            showError(
+                confirmPasswordError,
+                "Passwords do not match."
+            );
+            isValid = false;
+        }
+
+        if (!isValid) {
+            showMessage(
+                "Please fix the errors above and try again.",
                 "error"
             );
-
-            fullName.focus();
-
             return;
         }
 
+        // ----------------------------------------
+        // Disable Button While Processing
+        // ----------------------------------------
 
-        // =====================================
-        // EMAIL
-        // =====================================
-
-        const emailPattern =
-            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        if (!emailPattern.test(emailValue)) {
-
-            showToast(
-                "Please enter a valid email address.",
-                "error"
+        const submitButton =
+            signupForm.querySelector(
+                'button[type="submit"], input[type="submit"]'
             );
 
-            email.focus();
+        const originalButtonText = submitButton
+            ? submitButton.textContent
+            : "";
 
-            return;
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = "Creating Account...";
         }
 
+        // ----------------------------------------
+        // BACKEND API
+        // IMPORTANT:
+        // Keep this URL exactly like this.
+        // ----------------------------------------
 
-        // =====================================
-        // PHONE
-        // =====================================
-
-        if (phoneValue.length !== 10) {
-
-            showToast(
-                "Please enter a valid 10-digit mobile number.",
-                "error"
-            );
-
-            phone.focus();
-
-            return;
-        }
-
-
-        // =====================================
-        // PASSWORD
-        // =====================================
-
-        if (passwordValue.length < 4) {
-
-            showToast(
-                "Password must contain at least 4 characters.",
-                "error"
-            );
-
-            password.focus();
-
-            return;
-        }
-
-
-        // =====================================
-        // CONFIRM PASSWORD
-        // =====================================
-
-        if (passwordValue !== confirmValue) {
-
-            showToast(
-                "Passwords do not match.",
-                "error"
-            );
-
-            confirmPassword.focus();
-
-            return;
-        }
-
-
-        // =====================================
-        // TERMS
-        // =====================================
-
-        if (!terms.checked) {
-
-            showToast(
-                "Please accept the Terms & Conditions.",
-                "error"
-            );
-
-            return;
-        }
-
-
-        // =====================================
-        // BUTTON LOADING
-        // =====================================
-
-        signupBtn.disabled = true;
-
-        signupBtnText.textContent =
-            "Creating Account...";
-
-        signupBtnIcon.className =
-            "fa-solid fa-spinner fa-spin";
-
+        const API_URL =
+            "https://khan-store.onrender.com/api/signup";
 
         try {
+            console.log("Sending signup request to:", API_URL);
 
-            // =====================================
-            // SEND DATA TO BACKEND
-            const response = await fetch(
-    "https://khan-store.onrender.com/api/signup",
-    {
-        method: "POST",
+            const response = await fetch(API_URL, {
+                method: "POST",
 
-        headers: {
-            "Content-Type": "application/json"
-        },
+                headers: {
+                    "Content-Type": "application/json"
+                },
 
-                    body: JSON.stringify({
-                        name: nameValue,
-                        email: emailValue,
-                        phone: phoneValue,
-                        password: passwordValue
-                    })
-                }
-            );
+                body: JSON.stringify({
+                    name: nameValue,
+                    email: emailValue,
+                    phone: phoneValue,
+                    password: passwordValue
+                })
+            });
 
+            let data = {};
 
-            const data = await response.json();
+            try {
+                data = await response.json();
+            } catch (jsonError) {
+                console.warn(
+                    "Server did not return JSON.",
+                    jsonError
+                );
+            }
 
+            console.log("Signup response:", data);
 
-            // =====================================
-            // BACKEND ERROR
-            // =====================================
+            // ----------------------------------------
+            // Server Error
+            // ----------------------------------------
 
             if (!response.ok) {
+                const errorMessage =
+                    data.message ||
+                    data.error ||
+                    "Signup failed. Please try again.";
 
-                showToast(
-                    data.message || "Signup failed.",
-                    "error"
-                );
-
-                signupBtn.disabled = false;
-
-                signupBtnText.textContent =
-                    "Create Account";
-
-                signupBtnIcon.className =
-                    "fa-solid fa-arrow-right";
+                showMessage(errorMessage, "error");
 
                 return;
             }
 
+            // ----------------------------------------
+            // Signup Successful
+            // ----------------------------------------
 
-            // =====================================
-            // SUCCESS
-            // =====================================
+            showMessage(
+                "Account created successfully! Redirecting to login...",
+                "success"
+            );
 
-            signupBtnText.textContent =
-                "Account Created";
-
-            signupBtnIcon.className =
-                "fa-solid fa-check";
-
-
-            // Save basic account information only
-            // Password is NOT saved in localStorage.
-
-            const account = {
-
-                name: data.user.name,
-
-                email: data.user.email,
-
-                phone: data.user.phone,
-
-                createdAt:
-                    new Date().toISOString()
+            // Save basic account information locally.
+            // Password is NOT stored here.
+            const accountData = {
+                name: nameValue,
+                email: emailValue,
+                phone: phoneValue
             };
-
 
             localStorage.setItem(
                 "khanAccount",
-                JSON.stringify(account)
+                JSON.stringify(accountData)
             );
 
-
-            showToast(
-                "Account created successfully!"
-            );
-
-
-            // =====================================
-            // REDIRECT TO LOGIN
-            // =====================================
+            // ----------------------------------------
+            // Redirect to Login
+            // ----------------------------------------
 
             setTimeout(() => {
-
-                window.location.href =
-                    "login.html";
-
+                window.location.href = "login.html";
             }, 1200);
 
-
         } catch (error) {
+            console.error("Signup Error:", error);
 
-            console.error(
-                "Signup Error:",
-                error
-            );
-
-
-            showToast(
-                "Unable to connect to server. Make sure backend is running.",
+            showMessage(
+                "Unable to connect to the server. Please try again.",
                 "error"
             );
 
-
-            signupBtn.disabled = false;
-
-            signupBtnText.textContent =
-                "Create Account";
-
-            signupBtnIcon.className =
-                "fa-solid fa-arrow-right";
+        } finally {
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.textContent =
+                    originalButtonText || "Create Account";
+            }
         }
-
     });
-
 });
