@@ -5,7 +5,7 @@
    FULL MONGODB CONNECTED VERSION
 ========================================================= */
 
-const API_URL = "http://localhost:5000";
+const API_URL = "http://https://khan-store.onrender.com";
 
 const ORDERS_KEY = "khanOrders";
 const PRODUCTS_KEY = "khanProducts";

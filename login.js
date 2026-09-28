@@ -237,7 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
 
             const response = await fetch(
-                "http://localhost:5000/api/login",
+                "http://https://khan-store.onrender.com/api/login",
                 {
                     method: "POST",
 

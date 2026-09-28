@@ -1217,7 +1217,7 @@ function initializeEscapeKey() {
    24. MONGODB PRODUCT INTEGRATION
 ========================================================= */
 
-const PRODUCT_API_URL = "http://localhost:5000";
+const PRODUCT_API_URL = "http://https://khan-store.onrender.com";
 
 
 /* ---------------------------------------------------------

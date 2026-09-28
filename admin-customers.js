@@ -5,7 +5,7 @@
    MongoDB Connected Version
    ========================================================= */
 
-const API_URL = "http://localhost:5000";
+const API_URL = "http://https://khan-store.onrender.com";
 
 const ORDER_KEY = "khanOrders";
 const ADMIN_LOGIN_KEY = "khanAdminLoggedIn";

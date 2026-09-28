@@ -3,7 +3,7 @@
    MongoDB Connected Order Management
 ========================================================= */
 
-const API_URL = "http://localhost:5000";
+const API_URL = "http://https://khan-store.onrender.com";
 
 let allOrders = [];
 let filteredOrders = [];

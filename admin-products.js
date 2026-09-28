@@ -3,7 +3,7 @@
    MONGODB CONNECTED VERSION
 ========================================================= */
 
-const API_URL = "http://localhost:5000";
+const API_URL = "http://https://khan-store.onrender.com";
 
 const PRODUCT_KEY = "khanProducts";
 const ADMIN_LOGIN_KEY = "khanAdminLoggedIn";

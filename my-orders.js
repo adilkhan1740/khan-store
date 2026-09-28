@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     // CONFIG
     // =====================================================
 
-    const API_URL = "http://localhost:5000";
+    const API_URL = "http://https://khan-store.onrender.com";
 
     const CART_KEY = "khanCart";
     const LOCAL_ORDER_KEY = "khanOrders";
